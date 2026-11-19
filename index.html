@@ -4,13 +4,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>OPIc AL 13일 커리큘럼</title>
-
-  <meta name="apple-mobile-web-app-title" content="AL교육 script">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <link rel="apple-touch-icon" sizes="180x180" href="./icon.png?v=1">
-  <link rel="icon" type="image/png" href="./icon.png?v=1">
-  <script src="https://cdn.tailwindcss.com"></script>
 <style>
 :root{
   --ink:#172033; --sub:#5B6781; --paper:#F4F6FA; --card:#FFFFFF; --line:#D9DFEA;
@@ -167,11 +160,20 @@ footer{max-width:720px;margin:0 auto;padding:0 14px 40px;color:var(--sub);font-s
 .tts-ui{z-index:30}
 @media print{.reader{display:none !important}}
 @media (prefers-reduced-motion:no-preference){.script{transition:filter .2s}}
+
+/* v1119a: phone layout hardening */
+@media (max-width:640px){
+  .top{position:relative !important}
+  .top h1{font-size:20px !important}
+  .tts-ui{left:12px;right:12px;bottom:12px}
+  .tts-box{width:auto !important;max-width:none !important;max-height:55vh;max-height:55dvh;overflow:auto}
+  body{padding-bottom:84px}
+}
 </style>
 </head>
 <body>
 <header class="top">
-  <div class="brand"><h1>OPIc AL 13일 커리큘럼</h1><p>3콤보 · 듣기 · 말하기 테스트 · <b id="ver">v1118c</b></p><button type="button" id="fsmain" class="b sm" style="margin-left:auto" aria-label="브라우저 전체화면">⛶ 전체화면</button></div>
+  <div class="brand"><h1>OPIc AL 13일 커리큘럼</h1><p>3콤보 · 듣기 · 말하기 테스트 · <b id="ver">v1119a</b></p><button type="button" id="fsmain" class="b sm" style="margin-left:auto" aria-label="브라우저 전체화면">⛶ 전체화면</button></div>
   <nav id="rail" aria-label="일차 선택"></nav>
 </header>
 <main id="main"></main>
@@ -197,6 +199,30 @@ const DAYS = [
     ko:"MP(더 안전하고 더 시끄러워짐) → 예전(유리 테이블·큰 TV) → 지금(매트·가드·게이트) → 낮은 책장 → 가구 규칙 → 아쉬움 → 그래도 더 따뜻함",
     text:`My home has changed a lot since my son started walking, and the biggest change is that it became safer and noisier. In the past, we had a glass coffee table, a big TV, and a very clean living room. It looked like a picture in a magazine. But these days, everything is different. We removed the glass table, because it was too dangerous. Instead, we put down thick foam mats and put baby gates in front of the kitchen. We even bought a low bookshelf, where the book covers face outward, so my son can choose his own books. My rule for furniture is simple now: low, round, and easy to wipe clean. Honestly, I miss the old look sometimes. However, I like the new house more, because I can see my son's happy face every day. So the house is not as pretty as before, but it is much warmer.`,
     al:["If I compare the two, the old home was for showing, and the new home is for living.","In a few years, it will probably change again, maybe into a quiet study room for him."]},
+   {id:"d1-c4", tag:"콤보1 · 묘사(부엌)", q:"Describe the kitchen in your home. What kind of things do you have there?",
+    ko:"MP(부엌=내 지휘소, 작지만 효율적) → 위치·크기 → 식세기·인덕션 → 낮은 수납 → 아이 안전 → 냉장고 → 마무리",
+    text:`My kitchen is small, but it is very practical, and I call it my command center. It is right next to the living room, so I can watch my son while I cook. The most important machine is the dishwasher, because it saves me about thirty minutes every night. I also have an induction stove, which is easy to clean and safe for kids. There is a baby gate at the door, so my son cannot come in when I use a knife. The cabinets with sharp edges have safety locks, and the heavy pots are on the bottom shelf. In the fridge, I always keep fruit, yogurt, and cheese for him. It is not a fancy kitchen, but it works well for a busy family. When I stand there at night, I feel like a small chef.`,
+    al:["If I could change one thing, I would add a bigger counter, so my son and I could cook together.","But for now, it does its job perfectly."]},
+   {id:"d1-c5", tag:"콤보2 · 습관(집안일)", q:"What kind of housework do you do at home? Tell me about your routine.",
+    ko:"MP(바빠서 기계와 나눠서 한다) → 나·남편 역할 → 식세기·로봇청소기 → 빨래 → 주말 정리 → 마무리",
+    text:`Because I am always busy, I do housework in a quick and smart way, and I share it with my husband and my machines. On weekdays, I start the dishwasher after dinner, and the robot vacuum cleans the floor while I put my son to bed. My husband takes out the trash and folds the laundry. I wash the clothes at night, because it is easy to turn on the machine before I sleep. On weekends, we do a bigger cleaning. We wipe the foam mats, wash my son's toys, and put everything back in its place. Honestly, the toys are the hardest part, because they are everywhere. I try to keep the rule that nothing is perfect, but everything is clean enough. This way, I still have time to play with my son.`,
+    al:["The best part of this routine is that my son likes to help us put the toys into the box.","It turns cleaning into a game."]},
+   {id:"d1-c6", tag:"콤보3 · 경험(세탁기 고장)", q:"Tell me about a problem you had at home and how you solved it.",
+    ko:"MP(세탁기가 갑자기 멈춘 날 AI로 해결) → 상황(아침 빨래·아들 옷) → 당황 → AI에 증상 질문 → 배수 필터 청소 → 해결 → 교훈",
+    text:`The most memorable problem I had at home was when the washing machine suddenly stopped, and I solved it with the help of AI. It happened on a busy weekday evening. My son's clothes were inside, and the machine showed an error code. I was really nervous, because a repair visit takes a few days, and a toddler makes a lot of laundry. So I asked an AI tool, 'What does this error mean?' It said that the drain filter might be blocked. I opened the small cover at the bottom, and I found a lot of dirt and one tiny sock. I cleaned it, and the machine worked again in ten minutes. I felt so proud. After that day, I learned that many home problems look big, but they have simple answers. Now I always check the easy things first.`,
+    al:["I even shared the tip with my husband, and he was surprised.","Now our washing machine gets a filter check every month."]},
+   {id:"d1-c7", tag:"콤보1 · 묘사(동네)", q:"Describe the neighborhood where you live. What is it like?",
+    ko:"MP(조용하고 아이 키우기 좋은 동네) → 단지 놀이터 → 마트·소아과 → 길·공원 → 출퇴근 → 아쉬운 점 → 마무리",
+    text:`I live in a quiet neighborhood that is great for raising a child. The apartment complex has a small playground, and my son plays there almost every evening. Within a five-minute walk, there is a supermarket, a bakery, and a children's clinic. That is very helpful, because kids get sick often. The streets are wide and clean, and there is a small park where we feed the ducks sometimes. For my commute, I drive to work, so I do not need the subway, but a bus stop is close by. The only problem is that parking is difficult in the evening, because many families come home at the same time. Overall, I am happy with this place, because it feels safe, and my neighbors always say hello to my son.`,
+    al:["If I could add one thing, I would add a bigger library for children.","Still, it is a very comfortable place to live."]},
+   {id:"d1-c8", tag:"콤보2 · 습관(주말)", q:"What do you usually do at home on the weekend?",
+    ko:"MP(주말=아들 중심으로 느긋하게) → 아침(늦잠 못 함) → 놀이·그림책 → 점심 → 낮잠 시간 내 휴식 → 저녁 가족 영화 → 마무리",
+    text:`On weekends, my home life is all about my son, and I try to keep it slow and relaxed. First, I cannot sleep late, because my son wakes up early and shouts, 'Mom, let's play!' After breakfast, we build things with blocks or read picture books on the mats. At noon, I cook a simple lunch, like pasta or fried rice. When my son takes a nap, I drink coffee and sit quietly, which is my only me-time. In the afternoon, we sometimes go to the playground in our complex. In the evening, we watch a short cartoon together, and then I give him a bath. It is tiring, but it is the happiest part of my week. I do not have free time for myself, but I do not feel sad about that.`,
+    al:["Sometimes my parents visit, and then the weekend feels like a little party.","I really enjoy those noisy and warm days."]},
+   {id:"d1-c9", tag:"콤보3 · 과거-현재 비교(주말)", q:"How is your life at home now different from before you had a child?",
+    ko:"MP(조용하고 자유롭던 집 → 바쁘고 시끄럽지만 행복한 집) → 예전(늦잠·영화·혼자 시간) → 지금(5:20 기상·놀이) → 달라진 습관 → 아쉬움 → 그래도 지금이 좋다",
+    text:`My life at home has changed from quiet and free to busy and noisy, but I am happier now. Before I had my son, I slept until noon on weekends, watched movies for hours, and ordered food whenever I wanted. The house was always clean, and I could do anything I liked. Now I wake up at 5:20 on weekdays, and my free time is almost zero. Instead of movies, I watch cartoons, and instead of restaurants, I cook simple meals for my son. I miss my old quiet days sometimes, especially when the living room is full of toys at night. But when my son runs to me and says, 'Mommy!', I forget everything. So, in conclusion, my home lost its silence, but it gained a lot of love.`,
+    al:["If I compare the two, the old home was for relaxing, and the new home is for growing together.","I would not trade it for anything."]},
    {id:"d1-q14", tag:"Q14 · 돌발(변화 설명)", q:"Tell me about homes in Korea. How have they changed over the past ten years?",
     ko:"MP(더 스마트·편해짐) → 과거(작은 집·식세기 드묾) → 지금(스마트 기능) → 우리 집(식세기·로봇청소기) → 재택 공간 → 결론·미래",
     text:`Most people in Korea live in apartments, and homes have become smarter and more comfortable over the years. In the past, many families lived in small houses, and things like dishwashers and robot vacuums were rare. Now, a lot of apartments come with smart features, like lights you can control with your phone. In my home, a dishwasher and a robot vacuum are my best helpers. Also, since the pandemic, many people have made a small space at home for working. In the past, a home was just a place to sleep. These days, it is a place to work, rest, and even play. So I think Korean homes changed from simple to smart. Another change is that more families live in small households, so people want homes that are easy to clean. I believe this will continue, and in the future, we will probably control everything with our voice.`,
@@ -353,7 +379,15 @@ const DAYS = [
    {id:"d4-k3", tag:"콤보3 · 경험(가족의 날)", q:"Tell me about a memorable experience you had at a coffee shop.",
     ko:"MP(아들과 오리 보러 간 카페) → 올가을 회사 가족의 날 → 남편·아들 데려감 → 오리 보고 소리침 → 30분 관찰 → 마술쇼·팝콘 → 연못=내 휴식처가 아들의 행복 장소 → 귀여운 문제",
     text:`My most memorable coffee shop moment was taking my son to see the ducks at my favorite café. It happened this fall, on my company's family day. I brought my husband and my son, and the first place I took them was the café with the duck pond. The second my son saw the ducks, he started to shout and point. He kept saying "Ori," which means "duck" in Korean. He squatted down and watched them swim for about half an hour. Tiny ducks and my tiny boy, side by side. It was the cutest thing I have ever seen, and I took a hundred pictures. There was also a magic show and free snacks for kids, and he sat in the front row with a bag of popcorn. That pond used to be my place to catch my breath. Now it is also his happy place. The only problem is that he wants to come to my work to see the ducks every day, but I don't mind that problem at all.`,
-    al:["Next year, I hope there will be another family day, and I will bring a bigger camera.","I want to remember how small he was."]}
+    al:["Next year, I hope there will be another family day, and I will bring a bigger camera.","I want to remember how small he was."]},
+   {id:"d4-h4", tag:"콤보3 · 과거-현재 비교(휴가)", q:"How have your vacations changed over the years?",
+    ko:"MP(여행 중심 → 집에서 쉬는 휴가로 변화) → 예전(해외·친구) → 지금(집·가족) → 이유(아이·체력) → 아쉬움 → 미래",
+    text:`My vacations have changed from far away trips to simple rest at home. Before I had my son, I traveled a lot. I went abroad with my husband, took many pictures, and stayed in nice hotels. Those trips were exciting, and I still remember them. But these days, a trip with a toddler means heavy bags, long car rides, and a lot of crying. So we choose to stay at home and play. We build a tent in the living room, cook together, and read books. Of course, I miss the beautiful places sometimes. However, I also feel that quiet time at home is just as precious. In the future, I hope to travel again when my son is older, so we can enjoy a real trip together.`,
+    al:["Maybe a short family trip to a beach is the next step.","For now, home is my favorite vacation place."]},
+   {id:"d4-k4", tag:"콤보2 · 습관(카페 주문)", q:"What do you usually order at a coffee shop, and what do you do there?",
+    ko:"MP(아이스 아메리카노와 조용한 20분) → 회사 근처 카페 → 점심 후 → 혼자 있는 시간 → 가끔 디저트 → 마무리",
+    text:`At a coffee shop, I usually order an iced Americano, and I enjoy twenty quiet minutes by myself. I go to the café near my office after lunch, because it is a short walk from my desk. Even in winter, I choose iced coffee, because it wakes me up faster. Sometimes I buy a small dessert, like a cookie, when I feel tired. I sit by the window, check my phone, and just breathe. I do not talk much, because this time is a short break from work and from being a mom. On weekends, I rarely go to cafés, since my son cannot sit still. But a few times, we went to a kid-friendly café with a big play area. Honestly, a cup of coffee is my small reward every day.`,
+    al:["It is a tiny habit, but it keeps me going through the afternoon.","I think everyone needs a place to rest for a moment."]}
   ]},
   {topic:"14 · 15번 유형 (이 일차 주제 연결)", cards:[
    {id:"d4-q14", tag:"Q14 · 돌발(변화 설명)", q:"Tell me about how coffee shops in Korea have changed. What were they like in the past, and what are they like today?",
@@ -395,7 +429,15 @@ const DAYS = [
    {id:"d5-e3", tag:"콤보3 · 경험(운동을 시작한 이유)", q:"When and how did you first start exercising? Tell me about a memorable experience related to exercise.",
     ko:"MP(1년 반 전 육아휴직 복귀 직후 필라테스 시작, 취미 아닌 비상사태) → 허리 통증·팔 피로·계단 숨참 → '아들을 못 따라가겠다' → 첫 주 일대일 등록 → 첫 수업 굴욕 → 꾸준히 주 2회 → 변화 → 교훈",
     text:`I started Pilates a year and a half ago, right after I came back from maternity leave, and it felt more like an emergency than a hobby. After pregnancy and a year of carrying my baby, my body was the weakest it had ever been. My lower back hurt, my arms were always tired, and I got out of breath on the stairs. I thought, 'If I don't do something now, I can't keep up with him when he starts running.' So in my first week back at work, I signed up for one-on-one Pilates. My first class was humbling. My instructor said, 'Tighten your core!' and I thought, 'What core?' My legs were shaking, and I was sweating a lot. But I kept going twice a week. Now my back pain is much better, and carrying my son is easier. Looking back, I learned that taking care of myself is part of taking care of him.`,
-    al:["I used to feel guilty about taking an hour for myself, but I don't feel that way anymore.", "A healthy mom is a better mom."]}
+    al:["I used to feel guilty about taking an hour for myself, but I don't feel that way anymore.", "A healthy mom is a better mom."]},
+   {id:"d5-h4", tag:"콤보2 · 습관(수면·휴식)", q:"How do you rest and manage stress to stay healthy?",
+    ko:"MP(짧은 낮잠·스트레칭·커피 한 잔) → 수면 부족 → 점심 후 10분 → 스트레칭 → 퇴근길 음악 → 아들과 놀기 → 마무리",
+    text:`To stay healthy, I manage stress with small breaks, because I am usually short on sleep. I wake up at 5:20, so I often feel tired by the afternoon. After lunch, I take a ten-minute nap at my desk, or I walk around the building. Then I do a few easy stretches, especially for my neck and shoulders, because I sit for many hours. On my way home, I listen to calm music in the car, and that helps me change from work mode to mom mode. At night, I try to go to bed before eleven, but it does not always work. My best stress reliever is playing with my son, because his laugh makes me forget my worries. These habits are small, but they really help me.`,
+    al:["If I could sleep one hour more, I would feel like a new person.","For now, I am doing my best with short breaks."]},
+   {id:"d5-e4", tag:"콤보3 · 과거-현재 비교(건강 인식)", q:"How has your attitude toward health changed over the years?",
+    ko:"MP(젊을 땐 무관심 → 지금은 예방과 꾸준함) → 예전(야식·무리) → 계기(출산·체력) → 지금(식단·필라테스) → 아들 → 마무리",
+    text:`My attitude toward health has changed from not caring to taking it seriously. When I was younger, I ate late at night, skipped breakfast, and thought exercise was boring. I believed that I was strong enough. After I had my son, my body told me a different story. I got tired easily, and my back hurt a lot. That was my wake-up call. Now I read food labels, eat more fresh food, and do Pilates twice a week. I also try to prevent problems before they happen, so I take my health checkup every year. I know it sounds simple, but being healthy helps me keep up with my son. In the past, health was my own matter. Today, it is a promise to my family.`,
+    al:["Small habits are better than big plans, so I keep it simple.","I feel stronger now than I did three years ago."]}
   ]},
   {topic:"14 · 15번 유형 (이 일차 주제 연결)", cards:[
    {id:"d5-q14", tag:"Q14 · 돌발(변화 설명)", q:"Tell me about how people's health habits have changed compared to the past.",

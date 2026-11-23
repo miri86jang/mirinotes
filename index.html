@@ -61,7 +61,7 @@ main{max-width:720px;margin:0 auto;padding:16px 14px 60px}
 .script{margin:0 0 12px;font:17px/1.8 "Iowan Old Style","Charter",Georgia,"Times New Roman",serif}
 .script p{margin:0 0 .55em;padding-left:8px;border-left:3px solid transparent}
 .script .s{border-radius:4px;transition:background .15s}
-.script .s.mp{background:var(--mark);font-weight:700;padding:1px 3px}
+.script .s.mp{font-weight:700}
 .script p.speaking-p{border-left-color:#3B82F6}
 .script .s.speaking{background:var(--blue);color:var(--blueink);box-shadow:0 0 0 2px var(--blue)}
 .q.speaking{background:var(--blue);color:var(--blueink);border-radius:6px;padding:2px 6px}
@@ -151,7 +151,7 @@ footer{max-width:720px;margin:0 auto;padding:0 14px 40px;color:var(--sub);font-s
 
 .script .s{cursor:pointer}
 .script .s:hover{background:var(--blue)}
-.script .s.mp:hover{background:var(--mark)}
+.script .s.mp:hover{background:var(--blue)}
 .reader{position:fixed;inset:0;z-index:15;background:var(--paper);display:flex;flex-direction:column}
 .reader[hidden]{display:none}
 .rd-top{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:8px 12px;border-bottom:1px solid var(--line);flex-shrink:0}
@@ -210,8 +210,8 @@ footer{max-width:720px;margin:0 auto;padding:0 14px 40px;color:var(--sub);font-s
 .smenu-kr{margin:8px 4px 2px;font-size:15px;line-height:1.6}
 mark.up{background:#E3F4C6;color:inherit;border-radius:3px;padding:0 1px}
 u.ck{text-decoration:underline;text-decoration-color:#E07A2E;text-decoration-thickness:2px;text-underline-offset:3px}
-.script .s.mp mark.up{background:#CFEAA0}
-@media (prefers-color-scheme:dark){mark.up{background:#2F4A1C}.script .s.mp mark.up{background:#3E5E22}u.ck{text-decoration-color:#F0A060}}
+
+@media (prefers-color-scheme:dark){mark.up{background:#2F4A1C}u.ck{text-decoration-color:#F0A060}}
 .legend{font-size:12px;color:var(--sub);margin:0 0 6px}
 .rev{font-size:13px;color:var(--sub);margin:-4px 0 12px;background:var(--paper);border-radius:8px;padding:6px 10px}
 .rev summary{cursor:pointer;font-weight:700}
@@ -220,8 +220,11 @@ u.ck{text-decoration:underline;text-decoration-color:#E07A2E;text-decoration-thi
 .hw input{width:18px;height:18px;accent-color:var(--teal)}
 .hwbar{display:flex;align-items:center;gap:10px;margin:0 0 6px;font-size:13px;color:var(--sub)}
 .hwtopic{border-left-color:#E07A2E}
+.script .s{touch-action:manipulation}
 .script .s.loopone{outline:2px dashed #3B82F6;outline-offset:2px}
 .hw.fixed{color:#E07A2E;cursor:default}.hw.fixed input{accent-color:#E07A2E}
+.rd-q.flow{font-weight:500;font-size:15px;line-height:1.7;background:var(--paper)}
+.rd-flow-t{font-weight:800;color:var(--teal);margin-right:6px}
 /* v1119b: phone layout hardening */
 @media (max-width:640px){
   .top{position:relative !important}
@@ -234,7 +237,7 @@ u.ck{text-decoration:underline;text-decoration-color:#E07A2E;text-decoration-thi
 </head>
 <body>
 <header class="top">
-  <div class="brand"><h1><img class="logo" alt="" src="data:image/png;base64,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">OPIc AL 13일 커리큘럼</h1><p>3콤보 · 듣기 · 말하기 테스트 · <b id="ver">v0.0.10</b></p><button type="button" id="sybtn" class="b sm" style="margin-left:auto" aria-label="기기 간 동기화">🔄 동기화</button><button type="button" id="aikey" class="b sm" aria-label="AI 발음 분석 API 키 설정">🔑 API 키</button><button type="button" id="fsmain" class="b sm" aria-label="브라우저 전체화면">⛶ 전체화면</button></div>
+  <div class="brand"><h1><img class="logo" alt="" src="data:image/png;base64,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">OPIc AL 13일 커리큘럼</h1><p>3콤보 · 듣기 · 말하기 테스트 · <b id="ver">v0.0.11</b></p><button type="button" id="sybtn" class="b sm" style="margin-left:auto" aria-label="기기 간 동기화">🔄 동기화</button><button type="button" id="aikey" class="b sm" aria-label="AI 발음 분석 API 키 설정">🔑 API 키</button><button type="button" id="fsmain" class="b sm" aria-label="브라우저 전체화면">⛶ 전체화면</button></div>
   <nav id="rail" aria-label="일차 선택"></nav>
 </header>
 <main id="main"></main>
@@ -265,7 +268,7 @@ u.ck{text-decoration:underline;text-decoration-color:#E07A2E;text-decoration-thi
  </div>
 </div>
 <footer>
-  <p>스크립트 문장을 누르면 그 문장부터 읽어 주고, [답변 전체 듣기]를 누르면 전체 화면으로 바뀌어요(닫기: ← 이전, Backspace, 좌우 스와이프). 목표 시간은 선생님 기준으로 모든 답변 60~80초, 최대 2분이에요(⏱ 표시는 자연스러운 속도 분당 150단어 기준 예상 시간). 예상 등급은 암기·전달력 기반의 연습용 추정치이며 실제 OPIc 점수와 다를 수 있어요. 말하기 테스트는 기본적으로 브라우저 음성인식(아이폰은 사파리 권장)을 쓰고, 🔑 API 키를 넣으면 녹음 파일을 Gemini가 직접 듣고 강세·억양·연음·뭉개진 단어까지 분석해요(이 모드는 Edge에서도 돼요). 마이크 권한이 필요해요.</p>
+  <p>스크립트 문장을 1번 누르면 1회, 2번 누르면 무한 반복, 3번 누르면 정지해요. 반복 재생 중 전체 화면에서는 질문 대신 한국어 흐름이 보여요. [답변 전체 듣기]를 누르면 전체 화면으로 바뀌어요(닫기: ← 이전, Backspace, 좌우 스와이프). 목표 시간은 선생님 기준으로 모든 답변 60~80초, 최대 2분이에요(⏱ 표시는 자연스러운 속도 분당 150단어 기준 예상 시간). 예상 등급은 암기·전달력 기반의 연습용 추정치이며 실제 OPIc 점수와 다를 수 있어요. 말하기 테스트는 기본적으로 브라우저 음성인식(아이폰은 사파리 권장)을 쓰고, 🔑 API 키를 넣으면 녹음 파일을 Gemini가 직접 듣고 강세·억양·연음·뭉개진 단어까지 분석해요(이 모드는 Edge에서도 돼요). 마이크 권한이 필요해요.</p>
 </footer>
 
 <script>
@@ -290,10 +293,10 @@ const DAYS = [
       "text": "Well, off the top of my head, the first word that comes to mind is \"playroom.\" I've been living in the same apartment in Osan for about five years, since I got married. I live there with my husband and our three-year-old son. It's tucked away in a quiet neighborhood, and it's super handy because a kids' clinic is just a five-minute walk away. It has a living room, three bedrooms, a kitchen, and a bathroom. As soon as you walk in, it has a cozy and lively vibe. The living room is covered with soft mats and toys. My favorite spot is the kitchen, because I can cook and keep an eye on my son at the same time. So yeah, it's a little messy, but it's my absolute go-to place to recharge.",
       "up": [
        "off the top of my head",
+       "I've been living in the same apartment in Osan for about five years, since I got married",
        "tucked away",
-       "super handy",
-       "cozy and lively vibe",
-       "my absolute go-to place"
+       "a cozy and lively vibe",
+       "my absolute go-to place to recharge"
       ],
       "ul": [
        "I've been living",
@@ -343,9 +346,10 @@ const DAYS = [
       "ko": "[현재형 루틴·Miri Note] MP(짧지만 아주 바쁨) → 평일 5:40 출발·조용한 아침 → 퇴근 후 아들 저녁 → 하원 후 놀이·밥·목욕 → 아이 잠든 뒤 집안일(식세기·빨래, 바닥은 낮에 로봇청소기가 이미 청소) → 남편(쓰레기·빨래 개기) → 주말 대청소(매트·장난감) → [과거 한 줄] 어젯밤 자정 → So yeah(깨끗한 집 + 잠든 아이)",
       "text": "Honestly, my routine at home is short but super busy. On weekdays, I leave home at 5:40 in the morning, so my mornings are just a quick coffee and a quiet goodbye. The real action starts after work. As soon as I get home, I make dinner for my son. When he gets back from daycare, I play with him, feed him, and give him a bath. Once he falls asleep, I finally do the housework. I load the dishwasher and start the laundry. The floor is already clean, because the robot vacuum runs during the day while we're out. My husband helps a lot, too. He takes out the trash and folds the laundry. On weekends, we do a bigger cleaning, like wiping the foam mats and washing my son's toys. To be honest, the toys are the hardest part, because they're literally everywhere. Last night, for example, I didn't finish cleaning until almost midnight. So yeah, I don't have much time to relax, but there's nothing better than a clean home and a sleeping kid.",
       "up": [
-       "The real action starts",
+       "The real action starts after work",
+       "Once he falls asleep",
        "literally everywhere",
-       "there's nothing better than"
+       "there's nothing better than a clean home and a sleeping kid"
       ],
       "ul": [
        "On weekdays",
@@ -399,9 +403,12 @@ const DAYS = [
       "ko": "[비교급·Script] 서론(quite a few changes + reflect broader trends) → [과거] 작은 마을 단독주택·조용·넓음·편의 부족 → [현재] 오산 아파트·더 붐빔·더 좋은 전망·더 편리 → 큰 차이=기술(스마트 기기·음성 명령·로봇청소기·식세기) → 한국 트렌드(현대식 단지·스마트홈·헬스장·카페) → Overall(더 현대적·편리, 더 나은 삶의 질 기대). ※14번 '5~10년 주거 변화'가 나와도 이 스크립트로 답하기",
       "text": "There have been quite a few changes in my living situation over the years, and I think these changes reflect broader trends in Korean housing. When I was younger, I lived in a house in a small town. It was a quiet place with plenty of space, but it didn't have many of the things that make life easy today. Nowadays, I live in an apartment in Osan. It's in a much busier area, but the view is better, and life here is just more convenient. One big difference is technology. My current home has smart devices, so I can control the lights and air conditioner using my smartphone or voice commands. I also have appliances like a robot vacuum cleaner and a dishwasher. I think this reflects a broader trend in Korea. Modern apartment complexes have become more and more popular, and many of them have smart-home systems and shared places like gyms and cafés. Overall, Korean housing has become much more modern and convenient, and people now expect a better quality of life from their homes.",
       "up": [
-       "reflect broader trends",
-       "plenty of space",
-       "expect a better quality of life"
+       "There have been quite a few changes in my living situation over the years",
+       "reflect broader trends in Korean housing",
+       "It's in a much busier area, but the view is better",
+       "One big difference is technology",
+       "have become more and more popular",
+       "people now expect a better quality of life from their homes"
       ],
       "ul": [
        "When I was younger, I lived",
@@ -458,9 +465,12 @@ const DAYS = [
       "ko": "[문제·Miri Note] MP(가장 큰 문제는 소음, 윗집) → 윗집 아들 셋(초등 2 + 더 어린 1)·하루 종일 뛰는데 부모가 안 막음 → 처음엔 나아질 줄 → 관리사무소 통해 여러 번 → 변화 없음 → incredibly frustrating → Funny thing is: 아이 태어나기 전부터 국내 최고 두께 매트 → 아들에게 집에서 절대 뛰지 않기 → So yeah(좋은 이웃이 되자)",
       "text": "Oh, the biggest problem in my home is noise, and honestly, it doesn't come from us. It comes from upstairs. The family upstairs has three boys. Two of them are in elementary school, and one is even younger. They run and jump around all day, and their parents don't really try to stop them. At first, I thought it would get better, but it didn't. So I asked them to keep it down through the management office. I did that many times, but nothing has changed. To be honest, it's incredibly frustrating, especially when my son is trying to fall asleep. Funny thing is, we put down the thickest floor mats we could find in Korea, even before our son was born. And now, I teach my son that he must never jump at home, because I know exactly how it feels downstairs. So yeah, I can't change my neighbors, but I can make sure we're good neighbors ourselves.",
       "up": [
+       "it doesn't come from us",
        "keep it down",
+       "nothing has changed",
        "incredibly frustrating",
-       "Funny thing is"
+       "Funny thing is",
+       "I know exactly how it feels downstairs"
       ],
       "ul": [
        "three boys",
@@ -511,7 +521,11 @@ const DAYS = [
       "ko": "[문제 여러 개·Script] MP(오래된 아파트라 관리 문제가 꽤 있음) → 처음 이사 왔을 때 전 세입자가 관리 안 함 → 바로 몇 가지 고쳐야 했음 → For one thing: 전등(계속 깜빡임 → 전부 LED로 직접, 쉬운 DIY) → Another issue: 전자 도어락(낡고 배터리가 갑자기 방전 → 안전 문제 → 새 디지털 도어락 + 열쇠공 설치) → 연달아 고치느라 시간·노력 → 그래도 완전히 가치 있음(훨씬 편해짐)",
       "text": "I live in an old apartment, so it comes with its fair share of maintenance issues. When I first moved in, it was obvious the previous tenant didn't take good care of the place, so I had to fix a few problems right away. For one thing, the lighting was a real pain. Several bulbs were constantly flickering. Instead of replacing them, I decided to upgrade everything to LED bulbs. I did that myself, and it turned out to be a pretty easy DIY fix. Another issue was the electronic door lock. It was really old, and the battery kept dying unexpectedly. Since a broken lock isn't safe, I bought a new digital lock and hired a locksmith to install it properly. Fixing them back-to-back took some time and effort. Still, taking care of them was completely worth it, because the apartment feels so much more comfortable now.",
       "up": [
-       "its fair share of",
+       "it comes with its fair share of maintenance issues",
+       "it was obvious the previous tenant didn't take good care of the place",
+       "a real pain",
+       "it turned out to be a pretty easy DIY fix",
+       "the battery kept dying unexpectedly",
        "back-to-back",
        "completely worth it"
       ],
@@ -570,8 +584,11 @@ const DAYS = [
       "ko": "[경험·Script] 지난달 세탁기 문제 → 어느 날 작동 안 함 → 화면에 에러 → 고객센터 → 기사 점검 필요 → 다음 날 기사 방문 → 수리비가 비싸 새로 사는 게 낫다 → 주말에 근처 몰·여러 대 비교 → 세일 제품 구입 → 한 달째 사용·매우 만족 → 빨래가 훨씬 편해짐",
       "text": "Last month, I had a problem with my washing machine. One day, I tried to do the laundry, but the machine wouldn't start. An error message appeared on the screen, so I called customer service. They said a technician needed to check it. The next day, a repairman came to my house and looked at the machine. After inspecting it, he told me that it would be better to buy a new one because the repair would cost too much. That weekend, I went to a nearby mall and looked at several washing machines. After comparing a few models, I decided to buy one that was on sale. I've been using it for about a month now, and I'm very satisfied with it. It works well and makes doing laundry much more convenient.",
       "up": [
-       "After inspecting it",
-       "I've been using it for about a month now"
+       "the machine wouldn't start",
+       "it would be better to buy a new one because the repair would cost too much",
+       "After comparing a few models",
+       "I've been using it for about a month now",
+       "makes doing laundry much more convenient"
       ],
       "ul": [
        "Last month, I had",
@@ -628,11 +645,14 @@ const DAYS = [
       "ko": "[세대 비교·Script] 서론(noticeable shift) → [부모세대] 단독주택·부모님이 직접·아빠가 철물점에서 부품 사서 직접 수리 → [지금] 관리사무소·수리 업체 먼저 → 퇴근 후 지쳐서 전문가에게 → On top of that: 앱으로 리뷰·가격 비교·바로 예약 → Plus: 요즘 집은 복잡한 가전이라 어차피 전문가 필요 → In a nutshell(DIY보다 전문가)",
       "text": "Over the years, there's been a noticeable shift in how people deal with household problems. When I was growing up, I lived in a single-family house rather than an apartment. Back then, my parents handled pretty much all the maintenance issues on their own. Whenever something broke down, my dad would just head to the local hardware store, grab the necessary parts, and tackle the repair himself. These days, however, my approach is completely different. Whenever an issue pops up at home, my first instinct is to contact the apartment management office or call a professional repair service. After a long day at work, I'm usually too exhausted to mess around with home repairs, so I'd much rather pay a professional to take care of it. On top of that, smartphone apps have made it easier than ever to read reviews, compare prices, and book a service on the fly. Plus, modern homes are packed with complex appliances and high-tech systems that usually need experts anyway. So, in a nutshell, I feel like people nowadays lean heavily toward hiring experts rather than taking the DIY route.",
       "up": [
-       "a noticeable shift",
+       "there's been a noticeable shift in",
+       "my dad would just head to the local hardware store",
        "tackle the repair himself",
-       "pops up",
+       "Whenever an issue pops up at home, my first instinct is to",
+       "too exhausted to mess around with home repairs",
+       "I'd much rather",
        "on the fly",
-       "lean heavily toward"
+       "lean heavily toward hiring experts rather than taking the DIY route"
       ],
       "ul": [
        "When I was growing up, I lived",
@@ -685,10 +705,12 @@ const DAYS = [
       "ko": "[가전 여러 개·Script] 유용한 가전 많음(로봇청소기·에어프라이어) → 최고는 건조기(예전엔 널어 말림·시간도 들고 번거로움·날씨 나쁠 때 → 지금은 한 시간 안에 다 마름, game-changer) → 로봇청소기(타이머·알아서 청소·손 하나 까딱 안 함·시간과 노력 절약) → On top of that: 식기세척기(식사 후 넣기만) → 덕분에 집안일 시간이 확 줄어 하루가 훨씬 수월",
       "text": "My house is equipped with quite a few useful home appliances, like a robot vacuum and an air fryer, but if I had to pick the best one, it would definitely be the dryer. In the past, I used to hang-dry all my laundry, which was not only time-consuming but also a real hassle, especially during bad weather. Nowadays, I just throw everything into the dryer, and it's completely dry within an hour, which has been a total game-changer. Another appliance I rely on heavily is the robot vacuum. I can just set a timer, and it moves around the house by itself and cleans the floors without me having to lift a finger. It saves me a ton of time and effort on daily cleaning. On top of that, I use my dishwasher all the time. After a meal, I load all of the dishes into the dishwasher, making cleanup super easy. Thanks to all these modern conveniences, I'm able to really cut down on time spent on household chores, which makes my daily routine so much more manageable.",
       "up": [
-       "if I had to pick the best one",
+       "if I had to pick the best one, it would definitely be the dryer",
        "not only time-consuming but also a real hassle",
        "a total game-changer",
-       "without me having to lift a finger"
+       "I rely on heavily",
+       "without me having to lift a finger",
+       "cut down on time spent on household chores"
       ],
       "ul": [
        "used to hang-dry",
@@ -737,9 +759,13 @@ const DAYS = [
       "ko": "[뉴스·Script] 들은 뉴스(서울 집값 꾸준히 상승) → 문제점(사거나 빌리기도 어려움) → 원인(서울에 살고 싶은 사람은 많은데 집이 부족) → 결과(강남 등 인기 지역 급등·내 집 마련이 거의 불가능하게 느껴짐) → To make matters worse(정책이 자주 바뀌어 언제 살지 불확실) → In my opinion(공급 확대 + 안정적 장기 정책) → 기대 효과(더 저렴하고 예측 가능)",
       "text": "Recently, there's been a lot of talk about how housing prices in Seoul have been steadily climbing. Many people are finding it increasingly difficult to buy or even rent a home because prices have skyrocketed. A big reason is that so many people want to live in the Seoul area, but there just aren't enough homes for all of them. As a result, home prices in popular neighborhoods like Gangnam have gone way up, making it feel almost impossible to own a home. To make matters worse, real estate policies tend to change so often that buyers feel completely unsure about when to jump into the market. In my opinion, the government needs to focus on building more homes while making stable, long-term policies. That would go a long way toward making the housing market both more affordable and far more predictable.",
       "up": [
-       "skyrocketed",
+       "there's been a lot of talk about",
+       "have been steadily climbing",
+       "prices have skyrocketed",
+       "As a result",
        "To make matters worse",
        "jump into the market",
+       "In my opinion, the government needs to focus on",
        "go a long way toward"
       ],
       "ul": [
@@ -790,8 +816,10 @@ const DAYS = [
       "up": [
        "Hands down",
        "Funny thing is",
+       "I used to vacuum the floor almost every night",
+       "Since we got the robot vacuum, I've only used",
        "barely come out of the closet",
-       "a total lifesaver",
+       "it's been a total lifesaver",
        "can't imagine my life without it"
       ],
       "ul": [
@@ -3018,7 +3046,7 @@ const synth = window.speechSynthesis;
 const KEEP = [];                                   // Chrome의 utterance GC 끊김 방지용 참조 보관
 const TS = { voices: [], voice: null, rate: 1.0, rec: true };
 /* 미리 만든 선생님 녹음(mp3, 보이스 Heart). id → { t: [[시작,끝] 문장별 초], dur, n } */
-const MP3 = {"d1-c1":{"t":[[0.25,4.474],[5.174,10.038],[10.358,13.473],[14.173,20.722],[21.042,24.541],[24.861,28.018],[28.338,31.005],[31.705,37.123],[37.823,42.41]],"dur":42.91,"n":9},"d1-c2":{"t":[[0.25,3.578],[4.278,11.083],[11.403,13.323],[13.643,16.267],[16.587,20.747],[21.447,24.306],[24.626,27.015],[27.335,32.114],[32.434,34.162],[34.482,36.893],[37.593,43.033],[43.353,47.641],[47.961,51.801],[52.501,58.645]],"dur":59.145,"n":14},"d1-c3":{"t":[[0.25,8.485],[9.185,12.107],[12.427,18.294],[18.994,21.703],[22.023,27.357],[28.057,29.998],[30.318,37.443],[37.763,41.945],[42.645,45.183],[45.503,54.357],[55.057,63.057]],"dur":63.557,"n":11},"d1-c4":{"t":[[0.25,5.05],[5.37,6.714],[7.414,9.462],[9.782,13.195],[13.515,17.889],[18.589,21.213],[21.533,24.733],[25.053,27.655],[27.975,33.479],[34.179,40.409],[40.729,46.873],[47.573,52.607]],"dur":53.107,"n":12},"d1-c4b":{"t":[[0.25,4.581],[5.281,12.854],[13.554,16.05],[16.37,18.546],[18.866,23.367],[23.687,27.954],[28.654,31.129],[31.449,35.075],[35.395,41.475],[42.175,44.693],[45.393,51.473]],"dur":51.973,"n":11},"d1-c6":{"t":[[0.25,3.066],[3.766,7.265],[7.585,11.446],[11.766,13.814],[14.514,18.119],[18.439,24.221],[24.921,29.166],[29.486,33.582],[34.282,38.122],[38.442,41.77]],"dur":42.27,"n":10},"d1-q14b":{"t":[[0.25,5.306],[6.006,10.571],[10.891,14.966],[15.286,23.35],[24.05,27.293],[27.613,35.741],[36.061,44.061],[44.761,52.227],[52.547,59.438],[60.138,67.903]],"dur":68.403,"n":10},"d1-q14c":{"t":[[0.25,10.234],[10.554,19.258],[19.578,26.895],[27.595,31.286],[31.606,38.155],[38.475,41.697],[42.397,45.383],[45.703,50.589],[51.289,60.974]],"dur":61.474,"n":9},"d1-q15":{"t":[[0.25,5.882],[6.202,13.029],[13.349,19.685],[20.385,28.278],[28.978,37.703],[38.403,45.315],[45.635,51.481]],"dur":51.981,"n":7},"d1-q15b":{"t":[[0.25,4.773],[5.093,12.133],[12.833,19.083],[19.783,21.405],[21.725,27.634],[27.954,30.855],[31.555,38.787],[39.107,45.251],[45.571,47.939],[48.639,54.165],[54.485,57.983],[58.303,60.65],[61.35,65.233]],"dur":65.733,"n":13}};
+const MP3 = {"d1-c1":{"t":[[0.6,4.824],[5.774,10.638],[11.288,14.403],[15.353,21.902],[22.552,26.051],[26.701,29.858],[30.508,33.175],[34.125,39.543],[40.493,45.08]],"dur":45.58,"n":9},"d1-c2":{"t":[[0.6,3.928],[4.878,11.683],[12.333,14.253],[14.903,17.527],[18.177,22.337],[23.287,26.146],[26.796,29.185],[29.835,34.614],[35.264,36.992],[37.642,40.053],[41.003,46.443],[47.093,51.381],[52.031,55.871],[56.821,62.965]],"dur":63.465,"n":14},"d1-c3":{"t":[[0.6,8.835],[9.785,12.707],[13.357,19.224],[20.174,22.883],[23.533,28.867],[29.817,31.758],[32.408,39.533],[40.183,44.365],[45.315,47.853],[48.503,57.357],[58.307,66.307]],"dur":66.807,"n":11},"d1-c4":{"t":[[0.6,5.4],[6.05,7.394],[8.344,10.392],[11.042,14.455],[15.105,19.479],[20.429,23.053],[23.703,26.903],[27.553,30.155],[30.805,36.309],[37.259,43.489],[44.139,50.283],[51.233,56.267]],"dur":56.767,"n":12},"d1-c4b":{"t":[[0.6,4.931],[5.881,13.454],[14.404,16.9],[17.55,19.726],[20.376,24.877],[25.527,29.794],[30.744,33.219],[33.869,37.495],[38.145,44.225],[45.175,47.693],[48.643,54.723]],"dur":55.223,"n":11},"d1-c6":{"t":[[0.6,3.416],[4.366,7.865],[8.515,12.376],[13.026,15.074],[16.024,19.629],[20.279,26.061],[27.011,31.256],[31.906,36.002],[36.952,40.792],[41.442,44.77]],"dur":45.27,"n":10},"d1-q14b":{"t":[[0.6,5.656],[6.606,11.171],[11.821,15.896],[16.546,24.61],[25.56,28.803],[29.453,37.581],[38.231,46.231],[47.181,54.647],[55.297,62.188],[63.138,70.903]],"dur":71.403,"n":10},"d1-q14c":{"t":[[0.6,10.584],[11.234,19.938],[20.588,27.905],[28.855,32.546],[33.196,39.745],[40.395,43.617],[44.567,47.553],[48.203,53.089],[54.039,63.724]],"dur":64.224,"n":9},"d1-q15":{"t":[[0.6,6.232],[6.882,13.709],[14.359,20.695],[21.645,29.538],[30.488,39.213],[40.163,47.075],[47.725,53.571]],"dur":54.071,"n":7},"d1-q15b":{"t":[[0.6,5.123],[5.773,12.813],[13.763,20.013],[20.963,22.585],[23.235,29.144],[29.794,32.695],[33.645,40.877],[41.527,47.671],[48.321,50.689],[51.639,57.165],[57.815,61.313],[61.963,64.31],[65.26,69.143]],"dur":69.643,"n":13}};
 const AUD = new Audio(); AUD.preload = "auto";
 try { AUD.preservesPitch = true; AUD.mozPreservesPitch = true; AUD.webkitPreservesPitch = true; } catch (e) {}
 let ONE = null;                                    // 문장 하나만 재생할 때 { end, el }
@@ -3099,7 +3127,7 @@ const TTSX = {
     const T = this, m = MP3[T.id], src = "audio/" + T.id + (T.kind === "q" ? "-q" : "") + ".mp3";
     if (!AUD.src || !AUD.src.endsWith(src)) AUD.src = src;
     const go = () => {
-      if (seek) AUD.currentTime = T.kind === "a" ? Math.max(0, m.t[T.queue[T.i].si][0] - 0.28) : 0;   // 0.2초 여유
+      if (seek) AUD.currentTime = T.kind === "a" ? preStart(m.t, T.queue[T.i].si) : 0;   // 0.2초 여유
       AUD.playbackRate = TS.rate;
       markNow(T.queue[T.i]); paintStatus();
       const p = AUD.play(); if (p && p.catch) p.catch(() => { if (T.state === "playing") { T.state = "paused"; paintTTS(); } });
@@ -3192,6 +3220,14 @@ function markNow(it) {
     else { try { it.el.scrollIntoView({ block: "nearest", behavior: "smooth" }); } catch (e) {} }
   }
 }
+function paintFlow() {                             // 전체 화면에서 반복 재생 중이면 질문 대신 한국어 흐름
+  const rq = document.getElementById("rdq"); if (!rq || !READER.open) return;
+  const c = CARDS[READER.id]; if (!c) return;
+  const flow = (TTSX.kind === "a" && TTSX.id === READER.id && TTSX.state !== "idle" && TTSX.mode === "loop") || (typeof ONE !== "undefined" && ONE && ONE.loop && ONE.id === READER.id);
+  if (rq.dataset.flow === String(flow)) return;
+  rq.dataset.flow = String(flow); rq.classList.toggle("flow", flow);
+  if (flow) rq.innerHTML = `<span class="rd-flow-t">흐름</span>${esc(c.ko)}`; else rq.textContent = c.q;
+}
 function paintTTS() {                              // 버튼 라벨 · 패널 상태 동기화
   document.querySelectorAll('[data-act="ttsq"]').forEach(b => {
     const on = TTSX.kind === "q" && TTSX.id === holderId(b) && TTSX.state !== "idle";
@@ -3210,7 +3246,7 @@ function paintTTS() {                              // 버튼 라벨 · 패널 �
   if (pb) pb.textContent = TTSX.state === "paused" ? "▶ 재개" : "⏸ 일시정지";
   const fab = $("#ttsfab");
   if (fab) fab.textContent = TTSX.state === "idle" ? "🔊 음성" : (TTSX.state === "paused" ? "⏸ 일시정지" : "🔊 재생 중");
-  paintStatus();
+  paintStatus(); paintFlow();
 }
 function paintStatus() {
   const st = $("#ttsstat");
@@ -3280,18 +3316,21 @@ function openSentMenu(s) {
   });
   setTimeout(() => document.addEventListener("click", smOutside, true), 0);
 }
+const PRE = 0.4;                                   // 첫 단어가 깨지지 않게 0.4초 앞에서 시작(앞 문장과는 안 겹치게)
+function preStart(t, si) { const prevEnd = si > 0 ? t[si - 1][1] + 0.05 : 0; return Math.max(0, prevEnd, t[si][0] - PRE); }
+let LASTONE = null;                                // 1회 재생이 막 끝난 문장(두 번째 탭을 반복으로 인정)
 function stopOne() {
-  if (!ONE) return; const o = ONE; ONE = null; o.token = -1;
+  if (!ONE) return; const o = ONE; ONE = null; o.token = -1; LASTONE = { id: o.id, si: o.si, at: Date.now() };
   try { AUD.pause(); } catch (e) {} if (synth && o.synth) synth.cancel();
-  if (o.el) o.el.classList.remove("speaking", "loopone");
+  if (o.el) o.el.classList.remove("speaking", "loopone"); paintFlow();
 }
 function playOne(id, si, el, loop) {                  // 문장 하나만: loop=true면 그 문장 무한 반복
   TTSX.stopAll(); stopOne();
   const one = { id, si, el, loop: !!loop, token: Date.now() }; ONE = one;
-  clearMark(); el.classList.add("speaking"); if (one.loop) el.classList.add("loopone");
+  clearMark(); el.classList.add("speaking"); if (one.loop) el.classList.add("loopone"); paintFlow();
   if (useRec("a", id)) {
     const t = MP3[id].t[si], src = "audio/" + id + ".mp3";
-    one.start = Math.max(0, t[0] - 0.25);   // 첫 단어가 깨지지 않게 0.2초 앞에서 시작 one.end = t[1] + 0.05;
+    one.start = preStart(MP3[id].t, si);   // 첫 단어가 깨지지 않게 0.2초 앞에서 시작 one.end = t[1] + 0.05;
     if (!AUD.src || !AUD.src.endsWith(src)) AUD.src = src;
     const go = () => { if (ONE !== one) return; AUD.currentTime = one.start; AUD.playbackRate = TS.rate; const p = AUD.play(); if (p && p.catch) p.catch(() => stopOne()); };
     if (AUD.readyState >= 1) go(); else { AUD.addEventListener("loadedmetadata", go, { once: true }); AUD.load(); }
@@ -3312,10 +3351,11 @@ function sentTap(el) {                                // 문장 1번 = 1회, 2�
   if (el.closest(".script.blind")) return;
   const id = holderId(el); if (!id) return; const si = +el.dataset.i;
   if (ONE && ONE.id === id && ONE.si === si) {
-    if (!ONE.loop) { ONE.loop = true; el.classList.add("loopone"); }
-    else stopOne();
+    if (!ONE.loop) { ONE.loop = true; el.classList.add("loopone"); paintFlow(); }
+    else { stopOne(); LASTONE = null; }
     return;
   }
+  if (!ONE && LASTONE && LASTONE.id === id && LASTONE.si === si && Date.now() - LASTONE.at < 2500) { LASTONE = null; playOne(id, si, el, true); return; }   // 1회가 끝난 직후 두 번째 탭 = 반복
   playOne(id, si, el, false);
 }
 AUD.addEventListener("timeupdate", () => {
@@ -3404,7 +3444,7 @@ function initReader() {
       <span class="rd-tools"><button type="button" class="b sm" data-act="ttsq" data-state="0">🔊 질문 듣기</button><button type="button" class="b sm" data-act="ttsa" data-state="0" data-n="0">🔊 답변 전체 듣기</button><button type="button" class="b sm" id="rdfs" aria-label="브라우저 전체화면">⛶</button></span></div>
     <div class="rd-q" id="rdq" data-q></div>
     <div class="rd-body" id="rdbody" tabindex="0"></div>
-    <p class="rd-tip">문장을 누르면 그 문장부터 읽어 줘요 · 닫기: ← 이전, Backspace, 좌우 스와이프</p>`;
+    <p class="rd-tip">문장 누르기: 1번 1회 · 2번 무한 반복 · 3번 정지 · 닫기: ← 이전, Backspace, 좌우 스와이프</p>`;
   document.body.appendChild(r);
   $("#rdback").addEventListener("click", hideReader);
   $("#rdfs").addEventListener("click", toggleFullscreen);
@@ -3427,7 +3467,7 @@ function openReader(id) {
   const c = CARDS[id], r = document.getElementById("reader");
   READER.open = true; READER.id = id; r.dataset.id = id;
   $("#rdtag").textContent = c.tag;
-  $("#rdq").textContent = c.q;
+  $("#rdq").textContent = c.q; $("#rdq").dataset.flow = "false"; $("#rdq").classList.remove("flow");
   $("#rdbody").innerHTML = `<div class="script">${scriptBody(c)}</div>`;
   $('[data-act="ttsa"]', r).dataset.n = String(paras(c.text).length);
   r.hidden = false; document.body.style.overflow = "hidden";

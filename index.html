@@ -207,6 +207,18 @@ footer{max-width:720px;margin:0 auto;padding:0 14px 40px;color:var(--sub);font-s
 .smenu-b{display:flex;gap:8px}
 .smenu-b button{flex:1;min-height:44px;border-radius:10px;border:1px solid var(--line);background:var(--paper);font-weight:700;cursor:pointer}
 .smenu-kr{margin:8px 4px 2px;font-size:15px;line-height:1.6}
+mark.up{background:#E3F4C6;color:inherit;border-radius:3px;padding:0 1px}
+u.ck{text-decoration:underline;text-decoration-color:#E07A2E;text-decoration-thickness:2px;text-underline-offset:3px}
+.script .s.mp mark.up{background:#CFEAA0}
+@media (prefers-color-scheme:dark){mark.up{background:#2F4A1C}.script .s.mp mark.up{background:#3E5E22}u.ck{text-decoration-color:#F0A060}}
+.legend{font-size:12px;color:var(--sub);margin:0 0 6px}
+.rev{font-size:13px;color:var(--sub);margin:-4px 0 12px;background:var(--paper);border-radius:8px;padding:6px 10px}
+.rev summary{cursor:pointer;font-weight:700}
+.rev ul{margin:6px 0 2px;padding-left:18px}
+.hw{display:inline-flex;align-items:center;gap:4px;font-size:13px;font-weight:700;color:var(--teal);margin-left:8px;cursor:pointer;white-space:nowrap}
+.hw input{width:18px;height:18px;accent-color:var(--teal)}
+.hwbar{display:flex;align-items:center;gap:10px;margin:0 0 6px;font-size:13px;color:var(--sub)}
+.hwtopic{border-left-color:#E07A2E}
 /* v1119b: phone layout hardening */
 @media (max-width:640px){
   .top{position:relative !important}
@@ -219,7 +231,7 @@ footer{max-width:720px;margin:0 auto;padding:0 14px 40px;color:var(--sub);font-s
 </head>
 <body>
 <header class="top">
-  <div class="brand"><h1><img class="logo" alt="" src="data:image/png;base64,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">OPIc AL 13일 커리큘럼</h1><p>3콤보 · 듣기 · 말하기 테스트 · <b id="ver">v0.0.6</b></p><button type="button" id="aikey" class="b sm" style="margin-left:auto" aria-label="AI 발음 분석 API 키 설정">🔑 API 키</button><button type="button" id="fsmain" class="b sm" aria-label="브라우저 전체화면">⛶ 전체화면</button></div>
+  <div class="brand"><h1><img class="logo" alt="" src="data:image/png;base64,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">OPIc AL 13일 커리큘럼</h1><p>3콤보 · 듣기 · 말하기 테스트 · <b id="ver">v0.0.6 · 검토 중</b></p><button type="button" id="aikey" class="b sm" style="margin-left:auto" aria-label="AI 발음 분석 API 키 설정">🔑 API 키</button><button type="button" id="fsmain" class="b sm" aria-label="브라우저 전체화면">⛶ 전체화면</button></div>
   <nav id="rail" aria-label="일차 선택"></nav>
 </header>
 <main id="main"></main>
@@ -238,7 +250,7 @@ footer{max-width:720px;margin:0 auto;padding:0 14px 40px;color:var(--sub);font-s
  </div>
 </div>
 <footer>
-  <p>스크립트 문장을 누르면 그 문장부터 읽어 주고, [답변 전체 듣기]를 누르면 전체 화면으로 바뀌어요(닫기: ← 이전, Backspace, 좌우 스와이프). 목표 시간은 유형별로 달라요. 묘사(콤보1)·롤플레이 질문/문제해결(11·12번)은 약 1분, 루틴+경험(콤보2)·비교/경험(콤보3)·13~15번은 약 1분 30초, 최대 2분이에요(⏱ 표시는 분당 125단어 기준 예상 시간). 예상 등급은 암기·전달력 기반의 연습용 추정치이며 실제 OPIc 점수와 다를 수 있어요. 말하기 테스트는 기본적으로 브라우저 음성인식(아이폰은 사파리 권장)을 쓰고, 🔑 API 키를 넣으면 녹음 파일을 Gemini가 직접 듣고 강세·억양·연음·뭉개진 단어까지 분석해요(이 모드는 Edge에서도 돼요). 마이크 권한이 필요해요.</p>
+  <p>스크립트 문장을 누르면 그 문장부터 읽어 주고, [답변 전체 듣기]를 누르면 전체 화면으로 바뀌어요(닫기: ← 이전, Backspace, 좌우 스와이프). 목표 시간은 선생님 기준으로 모든 답변 60~80초, 최대 2분이에요(⏱ 표시는 자연스러운 속도 분당 150단어 기준 예상 시간). 예상 등급은 암기·전달력 기반의 연습용 추정치이며 실제 OPIc 점수와 다를 수 있어요. 말하기 테스트는 기본적으로 브라우저 음성인식(아이폰은 사파리 권장)을 쓰고, 🔑 API 키를 넣으면 녹음 파일을 Gemini가 직접 듣고 강세·억양·연음·뭉개진 단어까지 분석해요(이 모드는 Edge에서도 돼요). 마이크 권한이 필요해요.</p>
 </footer>
 
 <script>
@@ -247,27 +259,50 @@ const DAYS = [
  {
   "n": 1,
   "title": "집",
-  "goal": "공통주제 '집'(가장 많이 나옴). 강사 House 3 Combo 기준 6개 + 14·15번 5개. 묘사는 7~8문장·1분 이내, 일상은 현재형, 비교는 비교급·비교 패턴, 문제·사건은 경험 구조(두괄식 → 빌드업 → 감정 → 교훈). 문장을 길게 누르면 해석하기 · 문장듣기를 고를 수 있어요.",
+  "goal": "공통주제 '집'(가장 많이 나옴). 강사 스크립트 중심 + 내 이야기(Miri Note). 답변은 60~80초(선생님 기준). 형광펜 = 업그레이드 표현, 주황 밑줄 = 틀리기 쉬운 관사·전치사·복수·시제. 문장을 길게 누르면 해석하기 · 문장듣기.",
   "groups": [
    {
     "topic": "집 3콤보 (House 3 Combo)",
     "cards": [
      {
       "id": "d1-c1",
+      "src": [
+       "miri"
+      ],
       "tag": "콤보1 · 집/방 묘사",
       "q": "You indicated in the survey that you live in an apartment. Tell me about your home. What does it look like? What types of rooms does it have? Please describe it in detail.",
-      "ko": "[장소묘사 7~8문장·1분 이내] Opening(off the top of my head → 놀이방) → Location(오산 3룸·조용한 동네·소아과 5분) → 방 구성(거실·방 3·부엌·욕실) → Atmosphere(들어서면 아늑하고 활기찬 느낌·매트와 장난감) → Detail(좋아하는 곳=부엌, 요리하며 아이 지켜봄) → Closing(So yeah, 지저분해도 충전하는 곳)",
-      "text": "Well, off the top of my head, the first word that comes to mind is \"playroom.\" I live in a three-bedroom apartment in Osan with my husband and our three-year-old son. It's tucked away in a quiet neighborhood, and it's super handy because a kids' clinic is just a five-minute walk away. It has a living room, three bedrooms, a kitchen, and a bathroom. As soon as you walk in, it has a cozy and lively vibe. The living room is covered with soft mats and toys. My favorite spot is the kitchen, because I can cook and keep an eye on my son at the same time. So yeah, it's a little messy, but it's my absolute go-to place to recharge.",
+      "ko": "[장소묘사·Miri Note] Opening(off the top of my head → 놀이방) → [현재완료진행] 결혼 후 5년째 오산 같은 아파트 → 남편·세 살 아들 → Location(조용한 동네·소아과 5분) → 방 구성 → Atmosphere(아늑·활기) → 매트·장난감 → Detail(좋아하는 곳=부엌, 요리하며 아이 지켜봄) → Closing(So yeah, 충전하는 곳)",
+      "text": "Well, off the top of my head, the first word that comes to mind is \"playroom.\" I've been living in the same apartment in Osan for about five years, since I got married. I live there with my husband and our three-year-old son. It's tucked away in a quiet neighborhood, and it's super handy because a kids' clinic is just a five-minute walk away. It has a living room, three bedrooms, a kitchen, and a bathroom. As soon as you walk in, it has a cozy and lively vibe. The living room is covered with soft mats and toys. My favorite spot is the kitchen, because I can cook and keep an eye on my son at the same time. So yeah, it's a little messy, but it's my absolute go-to place to recharge.",
+      "up": [
+       "off the top of my head",
+       "tucked away",
+       "super handy",
+       "cozy and lively vibe",
+       "my absolute go-to place"
+      ],
+      "ul": [
+       "I've been living",
+       "for about five years",
+       "since I got married",
+       "three-year-old son",
+       "a five-minute walk",
+       "three bedrooms",
+       "the kitchen",
+       "at the same time"
+      ],
+      "rev": [
+       "강사 꿀팁 반영: 'I've been living in the same apartment in Osan for about five years, since I got married.' 추가(현재완료진행으로 시제 다양화).",
+       "원래 2번 문장(오산 방 3개 아파트)은 위 문장과 겹쳐서 'I live there with my husband and our three-year-old son.'으로 줄임.",
+       "그 외 수정 없음."
+      ],
       "al": [
        "One thing that stands out is the big window in the living room. The morning sun comes in, and my son loves to play right there.",
        "It's not a fancy home, but I'd pick it over any hotel."
       ],
-      "src": [
-       "miri"
-      ],
       "kr": [
        "음, 바로 떠오르는 건 '놀이방'이라는 단어예요.",
-       "저는 오산에 있는 방 3개짜리 아파트에서 남편, 세 살 아들과 함께 살아요.",
+       "결혼하고 나서 5년쯤 오산에 있는 같은 아파트에서 살고 있어요.",
+       "거기서 남편, 세 살 아들과 함께 살아요.",
        "조용한 동네에 쏙 들어가 있고, 소아과가 걸어서 5분이라 정말 편해요.",
        "거실 하나, 방 세 개, 부엌, 욕실이 있어요.",
        "들어서자마자 아늑하고 활기찬 분위기가 느껴져요.",
@@ -278,16 +313,34 @@ const DAYS = [
      },
      {
       "id": "d1-c2",
+      "src": [
+       "miri"
+      ],
       "tag": "콤보2 · 집에서 일상(집안일)",
       "q": "What is your normal routine at home? Or, tell me what you do to keep your house clean and comfortable. What kinds of housework do you do around your home?",
-      "ko": "[현재형 루틴] MP(짧지만 아주 바쁨) → 평일 5:40 출발·조용한 아침 → 퇴근 후 아들 저녁 → 하원 후 놀이·밥·목욕·재우기 → 아이 잠든 뒤 집안일(식세기·빨래·로봇청소기) → 남편(쓰레기·빨래 개기) → 주말 대청소(매트·장난감) → [과거 한 줄] 어젯밤 자정 → So yeah 마무리(깨끗한 집 + 잠든 아이)",
+      "ko": "[현재형 루틴·Miri Note] MP(짧지만 아주 바쁨) → 평일 5:40 출발·조용한 아침 → 퇴근 후 아들 저녁 → 하원 후 놀이·밥·목욕 → 아이 잠든 뒤 집안일(식세기·빨래·로봇청소기) → 남편(쓰레기·빨래 개기) → 주말 대청소(매트·장난감) → [과거 한 줄] 어젯밤 자정 → So yeah(깨끗한 집 + 잠든 아이)",
       "text": "Honestly, my routine at home is short but super busy. On weekdays, I leave home at 5:40 in the morning, so my mornings are just a quick coffee and a quiet goodbye. The real action starts after work. As soon as I get home, I make dinner for my son. When he gets back from daycare, I play with him, feed him, and give him a bath. Once he falls asleep, I finally do the housework. I load the dishwasher, start the laundry, and let the robot vacuum clean the floor. My husband helps a lot, too. He takes out the trash and folds the laundry. On weekends, we do a bigger cleaning, like wiping the foam mats and washing my son's toys. To be honest, the toys are the hardest part, because they're literally everywhere. Last night, for example, I didn't finish cleaning until almost midnight. So yeah, I don't have much time to relax, but there's nothing better than a clean home and a sleeping kid.",
+      "up": [
+       "The real action starts",
+       "literally everywhere",
+       "there's nothing better than"
+      ],
+      "ul": [
+       "On weekdays",
+       "leave home",
+       "at 5:40 in the morning",
+       "gets back from daycare",
+       "the dishwasher",
+       "takes out the trash",
+       "the hardest part",
+       "didn't finish"
+      ],
+      "rev": [
+       "수정 없음."
+      ],
       "al": [
        "On Sundays, I also spend about two hours making my son's meals for the week.",
        "It's tiring, but it makes the weekdays so much easier."
-      ],
-      "src": [
-       "miri"
       ],
       "kr": [
        "솔직히 집에서의 제 일과는 짧지만 엄청 바빠요.",
@@ -307,47 +360,84 @@ const DAYS = [
      },
      {
       "id": "d1-c3",
-      "tag": "콤보3 · 과거-현재 집 비교",
-      "q": "Tell me about the house or apartment you lived in when you were a child. How was it different from where you live now? What are the differences and the similarities?",
-      "ko": "[비교급·비교 패턴, 14번 '주거 변화'에도 재사용] 서론(Over the last twenty years ~ completely changed) → [과거] 작은 마을 단독주택·조용·넓음·마당 → 지금만큼 편리하지 않음(겨울 추움·큰 마트 없음) → [현재] 오산 아파트·더 붐비지만 훨씬 편리 → 가장 큰 차이=기술(식세기·로봇청소기) → 단지 놀이터·주차장 → 공통점(가족·따뜻함) → Looking back / All in all 마무리. ※어릴 적 집은 강사 스크립트 기반이라 실제와 다르면 알려 주세요",
-      "text": "Over the last twenty years, my living situation has completely changed. When I was a kid, I lived in a house in a small town. It was a quiet place with plenty of space, and we even had a little yard. But back then, it wasn't as convenient as it is today. In winter, the house was really cold, and there weren't any big supermarkets nearby. These days, I live in an apartment in Osan. It's smaller than my old house, and it's in a much busier area, but it's way more convenient. One big difference is technology. In my current home, I have a dishwasher and a robot vacuum, so housework takes much less time. On top of that, our apartment complex has a playground and a parking lot, which is perfect for a family with a little kid. Of course, there are some similarities, too. Both homes are full of family, and both feel safe and warm. Looking back, it's amazing how much things have changed. All in all, my home has become much more modern and convenient.",
-      "al": [
-       "I think this reflects a bigger trend in Korea. More and more people are moving into modern apartment complexes.",
-       "But I still miss that little yard sometimes."
-      ],
       "src": [
-       "miri",
        "script"
       ],
+      "tag": "콤보3 · 과거-현재 집 비교 (14번 주거 변화 겸용)",
+      "q": "Tell me about the house or apartment you lived in when you were a child. How was it different from where you live now? What are the differences and the similarities?",
+      "ko": "[비교급·Script] 서론(quite a few changes + reflect broader trends) → [과거] 작은 마을 단독주택·조용·넓음·편의 부족 → [현재] 오산 아파트·더 붐빔·더 좋은 전망·더 편리 → 큰 차이=기술(스마트 기기·음성 명령·로봇청소기·식세기) → 한국 트렌드(현대식 단지·스마트홈·헬스장·카페) → Overall(더 현대적·편리, 더 나은 삶의 질 기대). ※14번 '5~10년 주거 변화'가 나와도 이 스크립트로 답하기",
+      "text": "There have been quite a few changes in my living situation over the years, and I think these changes reflect broader trends in Korean housing. When I was younger, I lived in a house in a small town. It was a quiet place with plenty of space, but it didn't have many of the things that make life easy today. Nowadays, I live in an apartment in Osan. It's in a much busier area, but the view is better, and life here is just more convenient. One big difference is technology. My current home has smart devices, so I can control the lights and air conditioner using my smartphone or voice commands. I also have appliances like a robot vacuum cleaner and a dishwasher. I think this reflects a broader trend in Korea. Modern apartment complexes have become more and more popular, and many of them have smart-home systems and shared places like gyms and cafés. Overall, Korean housing has become much more modern and convenient, and people now expect a better quality of life from their homes.",
+      "up": [
+       "reflect broader trends",
+       "plenty of space",
+       "expect a better quality of life"
+      ],
+      "ul": [
+       "When I was younger, I lived",
+       "a house in a small town",
+       "didn't have",
+       "Nowadays, I live",
+       "much busier",
+       "is better",
+       "more convenient",
+       "have become",
+       "has become much more"
+      ],
+      "rev": [
+       "수원 → 오산.",
+       "'didn't have many modern conveniences' → 'didn't have many of the things that make life easy today' (쉬운 말, 사용자 선택).",
+       "'the overall living environment is more convenient' → 'life here is just more convenient' (쉬운 말, 사용자 선택).",
+       "'have become increasingly popular, offering smart-home systems and shared facilities like fitness centers and cafes' → 'have become more and more popular, and many of them have smart-home systems and shared places like gyms and cafés' (쉬운 말, 사용자 선택).",
+       "첫 문장과 마지막 문장은 원문 유지(사용자 선택)."
+      ],
+      "al": [
+       "But I still miss the quiet streets of that small town sometimes.",
+       "Maybe that's why I love going to the beach on weekends."
+      ],
       "kr": [
-       "지난 20년 동안 제 주거 환경은 완전히 바뀌었어요.",
+       "세월이 흐르면서 제 주거 환경에 꽤 많은 변화가 있었는데, 이 변화들이 한국 주거의 큰 흐름을 보여 준다고 생각해요.",
        "어렸을 때는 작은 마을의 단독주택에 살았어요.",
-       "조용하고 공간이 넉넉한 곳이었고, 작은 마당도 있었어요.",
-       "하지만 그때는 지금만큼 편리하지 않았어요.",
-       "겨울엔 집이 정말 추웠고, 근처에 큰 마트도 없었어요.",
+       "조용하고 공간이 넉넉한 곳이었지만, 요즘 생활을 편하게 해 주는 것들은 별로 없었어요.",
        "요즘은 오산에 있는 아파트에 살아요.",
-       "예전 집보다 작고 훨씬 붐비는 동네지만, 훨씬 더 편리해요.",
+       "훨씬 붐비는 동네지만 전망이 더 좋고, 여기 생활이 그냥 더 편리해요.",
        "큰 차이 하나는 기술이에요.",
-       "지금 집에는 식기세척기와 로봇청소기가 있어서 집안일 시간이 훨씬 줄었어요.",
-       "게다가 우리 아파트 단지에는 놀이터와 주차장이 있어서 어린아이가 있는 가족에게 딱이에요.",
-       "물론 비슷한 점도 있어요.",
-       "두 집 모두 가족으로 가득하고, 둘 다 안전하고 따뜻하게 느껴져요.",
-       "돌아보면 정말 많이 변한 게 놀라워요.",
-       "전반적으로 제 집은 훨씬 현대적이고 편리해졌어요."
+       "지금 집에는 스마트 기기가 있어서 스마트폰이나 음성 명령으로 불과 에어컨을 조절할 수 있어요.",
+       "로봇청소기와 식기세척기 같은 가전도 있어요.",
+       "이게 한국의 큰 흐름을 보여 준다고 생각해요.",
+       "현대식 아파트 단지가 점점 더 인기를 끌고 있고, 그중 많은 곳에 스마트홈 시스템과 헬스장·카페 같은 공용 공간이 있어요.",
+       "전반적으로 한국의 주거는 훨씬 현대적이고 편리해졌고, 사람들은 이제 집에서 더 나은 삶의 질을 기대해요."
       ]
      },
      {
       "id": "d1-c4",
-      "tag": "콤보3 · 집 문제 ① 층간소음",
+      "src": [
+       "miri"
+      ],
+      "tag": "콤보3 · 집 문제(층간소음)",
       "q": "Have you ever had any problems with your home? What was the problem, and how did you deal with it? How did the problem turn out? Give me as many details as possible.",
-      "ko": "[문제 ①·Miri Note] MP(가장 큰 문제는 소음, 우리 집이 아니라 윗집) → 윗집 아들 셋(초등 2명 + 더 어린 1명)·하루 종일 뛰는데 부모가 안 막음 → 처음엔 나아질 줄 → 관리사무소 통해 여러 번 → 변화 없음 → incredibly frustrated(아이 재울 때 특히) → Funny thing is: 아이 태어나기 전부터 국내 최고 두께 매트 → 지금도 아들에게 집에서 절대 뛰지 않기 가르침(아래층 기분을 정확히 아니까) → So yeah: 이웃은 못 바꿔도 우리는 좋은 이웃이 될 수 있음",
+      "ko": "[문제·Miri Note] MP(가장 큰 문제는 소음, 윗집) → 윗집 아들 셋(초등 2 + 더 어린 1)·하루 종일 뛰는데 부모가 안 막음 → 처음엔 나아질 줄 → 관리사무소 통해 여러 번 → 변화 없음 → incredibly frustrating → Funny thing is: 아이 태어나기 전부터 국내 최고 두께 매트 → 아들에게 집에서 절대 뛰지 않기 → So yeah(좋은 이웃이 되자)",
       "text": "Oh, the biggest problem in my home is noise, and honestly, it doesn't come from us. It comes from upstairs. The family upstairs has three boys. Two of them are in elementary school, and one is even younger. They run and jump around all day, and their parents don't really try to stop them. At first, I thought it would get better, but it didn't. So I asked them to keep it down through the management office. I did that many times, but nothing has changed. To be honest, it's incredibly frustrating, especially when my son is trying to fall asleep. Funny thing is, we put down the thickest floor mats we could find in Korea, even before our son was born. And now, I teach my son that he must never jump at home, because I know exactly how it feels downstairs. So yeah, I can't change my neighbors, but I can make sure we're good neighbors ourselves.",
+      "up": [
+       "keep it down",
+       "incredibly frustrating",
+       "Funny thing is"
+      ],
+      "ul": [
+       "three boys",
+       "in elementary school",
+       "thought it would get better",
+       "many times",
+       "nothing has changed",
+       "the thickest floor mats",
+       "was born",
+       "downstairs"
+      ],
+      "rev": [
+       "수정 없음. (60~80초 안: 약 65초)"
+      ],
       "al": [
        "Sometimes I wonder if they even know how loud it is downstairs.",
        "Maybe one day I'll leave a friendly note with some cookies and see if that works."
-      ],
-      "src": [
-       "miri"
       ],
       "kr": [
        "아, 우리 집의 가장 큰 문제는 소음인데, 솔직히 그게 우리 집에서 나는 게 아니에요.",
@@ -366,60 +456,97 @@ const DAYS = [
      },
      {
       "id": "d1-c4b",
-      "tag": "콤보3 · 집 문제 ② 전등·도어락",
-      "q": "Have you had any other problems with your home? What happened, and how did you deal with them?",
-      "ko": "[문제 ②·Script(강사 스크립트 기반)] MP(조금 오래된 아파트라 문제가 꽤 있음, 두 개가 특히) → For one thing: 전등(복도 전구 계속 깜빡임 → 하나씩 말고 전부 LED로 → 영상 보고 직접, 생각보다 쉬움) → Another issue: 디지털 도어락(오래돼서 배터리가 갑자기 방전 → 아이 안고 왔는데 문이 안 열림 → totally flustered → 안전 문제라 새 도어락 + 열쇠공 설치) → 연달아 고치느라 시간·노력 → 그래도 훨씬 안전하고 편해짐",
-      "text": "Our apartment is a bit old, so it comes with its fair share of problems. Two of them really stand out. For one thing, the lights were a real pain. Several bulbs in the hallway kept flickering. Instead of changing them one by one, I decided to switch everything to LED bulbs. I watched a short video and did it myself, and it turned out to be a pretty easy fix. Another issue was our digital door lock. It was really old, and the battery kept dying without any warning. One night, I came home with my son in my arms, and the door just wouldn't open. I was totally flustered. Since a broken lock is a safety problem, we bought a new one and had a locksmith put it in properly. Fixing these things back-to-back took some time and effort. Still, it was completely worth it, because our home feels so much safer and more comfortable now.",
+      "src": [
+       "script"
+      ],
+      "tag": "콤보3 · 집 문제 여러 개",
+      "q": "Have you ever had any problems with your home? What were the problems, and how did you deal with them?",
+      "ko": "[문제 여러 개·Script] MP(오래된 아파트라 관리 문제가 꽤 있음) → 처음 이사 왔을 때 전 세입자가 관리 안 함 → 바로 몇 가지 고쳐야 했음 → For one thing: 전등(계속 깜빡임 → 전부 LED로 직접, 쉬운 DIY) → Another issue: 전자 도어락(낡고 배터리가 갑자기 방전 → 안전 문제 → 새 디지털 도어락 + 열쇠공 설치) → 연달아 고치느라 시간·노력 → 그래도 완전히 가치 있음(훨씬 편해짐)",
+      "text": "I live in an old apartment, so it comes with its fair share of maintenance issues. When I first moved in, it was obvious the previous tenant didn't take good care of the place, so I had to fix a few problems right away. For one thing, the lighting was a real pain. Several bulbs were constantly flickering. Instead of replacing them, I decided to upgrade everything to LED bulbs. I did that myself, and it turned out to be a pretty easy DIY fix. Another issue was the electronic door lock. It was really old, and the battery kept dying unexpectedly. Since a broken lock isn't safe, I bought a new digital lock and hired a locksmith to install it properly. Fixing them back-to-back took some time and effort. Still, taking care of them was completely worth it, because the apartment feels so much more comfortable now.",
+      "up": [
+       "its fair share of",
+       "back-to-back",
+       "completely worth it"
+      ],
+      "ul": [
+       "an old apartment",
+       "When I first moved in",
+       "the previous tenant didn't",
+       "Several bulbs were",
+       "LED bulbs",
+       "kept dying",
+       "a new digital lock",
+       "took some time"
+      ],
+      "rev": [
+       "'First,' → 'For one thing,' (강사 노트: First/Second 같은 템플릿 연결어 빼기).",
+       "'address a few persistent problems' → 'fix a few problems' (쉬운 말).",
+       "'a major nuisance—several bulbs…' → 'a real pain. Several bulbs…' (쉬운 말, 대시 대신 두 문장).",
+       "'tackled that myself' → 'did that myself', 'pretty straightforward' → 'pretty easy' (쉬운 말).",
+       "'outdated' → 'really old', 'a faulty lock is a safety hazard' → 'a broken lock isn't safe' (쉬운 말).",
+       "그 외 원문 유지."
+      ],
       "al": [
        "These days, I change the door lock battery every six months, just to be safe.",
        "Small habits like that save a lot of trouble."
       ],
-      "src": [
-       "script"
-      ],
       "kr": [
-       "우리 아파트는 조금 오래돼서 이런저런 문제가 꽤 있어요.",
-       "그중 두 가지가 특히 기억에 남아요.",
-       "우선, 전등이 정말 골칫거리였어요.",
-       "복도 전구 몇 개가 계속 깜빡거렸어요.",
-       "하나씩 바꾸는 대신, 전부 LED 전구로 바꾸기로 했어요.",
-       "짧은 영상을 보고 직접 했는데, 생각보다 꽤 쉬운 수리였어요.",
-       "또 다른 문제는 디지털 도어락이었어요.",
-       "정말 오래돼서 배터리가 아무 예고 없이 계속 나갔어요.",
-       "어느 날 밤, 아들을 안고 집에 왔는데 문이 도무지 안 열렸어요.",
-       "완전히 당황했어요.",
-       "고장 난 도어락은 안전 문제라서, 새 걸 사서 열쇠공에게 제대로 설치해 달라고 했어요.",
-       "이것들을 연달아 고치느라 시간과 노력이 좀 들었어요.",
-       "그래도 완전히 그럴 만한 가치가 있었어요. 지금 우리 집이 훨씬 안전하고 편하게 느껴지거든요."
+       "저는 오래된 아파트에 살아서 관리 문제가 꽤 있어요.",
+       "처음 이사 왔을 때 전 세입자가 집을 잘 관리하지 않은 게 뻔히 보여서, 바로 몇 가지를 고쳐야 했어요.",
+       "우선, 조명이 정말 골칫거리였어요.",
+       "전구 몇 개가 계속 깜빡거렸어요.",
+       "그냥 갈아 끼우는 대신 전부 LED 전구로 바꾸기로 했어요.",
+       "제가 직접 했는데, 꽤 쉬운 셀프 수리였어요.",
+       "또 다른 문제는 전자 도어락이었어요.",
+       "정말 오래돼서 배터리가 갑자기 계속 나갔어요.",
+       "고장 난 도어락은 안전하지 않으니까, 새 디지털 도어락을 사서 열쇠공에게 제대로 설치해 달라고 했어요.",
+       "그것들을 연달아 고치느라 시간과 노력이 좀 들었어요.",
+       "그래도 손본 건 완전히 그럴 만한 가치가 있었어요. 지금 아파트가 훨씬 더 편안하게 느껴지거든요."
       ]
      },
      {
       "id": "d1-c6",
-      "tag": "콤보3 · 집 문제 자세히(대처)",
-      "q": "Choose one of the problems you had at home and tell me about it in detail. What exactly happened, how did you deal with it, and how did it turn out?",
-      "ko": "[경험 구조·Script(강사 스크립트 기반)] 두괄식(세탁기 문제가 제일 기억남) → 지난달 빨래하려는데 작동 안 함·화면에 에러 → 아이 때문에 거의 매일 빨래 → totally flustered → 바로 고객센터 → 기사 점검 필요 → 다음 날 기사 방문 → 수리비가 비싸서 새로 사는 게 낫다 → To make matters worse: 빨래가 계속 쌓임 → 주말에 근처 몰·여러 모델 비교·세일 제품 구입 → 한 달째 사용·extremely satisfied(조용·빠름) → Looking back: 계속 고치는 것보다 바꾸는 게 나을 때도",
-      "text": "Oh, the washing machine problem is the one I remember the most. Last month, I tried to do the laundry, but the machine just wouldn't start. An error message popped up on the screen. With a toddler, we do laundry almost every day, so I was totally flustered. I called customer service right away, and they said a technician needed to check it. The next day, a repairman came over and looked at the machine. After checking it, he told me it would be better to buy a new one, because the repair would cost too much. To make matters worse, the laundry kept piling up. So that weekend, we went to a nearby mall and looked at several washing machines. After comparing a few models, we picked one that was on sale. I've been using it for about a month now, and I'm extremely satisfied with it. It's quieter and faster than the old one. Looking back, I learned that sometimes it's smarter to replace something than to keep fixing it.",
-      "al": [
-       "The best part is that my son loves watching the new machine spin.",
-       "He calls it his favorite TV show."
-      ],
       "src": [
        "script"
       ],
+      "tag": "콤보3 · 집 문제 자세히(대처)",
+      "q": "Choose one of the problems you had at home and tell me about it in detail. What exactly happened, how did you deal with it, and how did it turn out?",
+      "ko": "[경험·Script] 지난달 세탁기 문제 → 어느 날 작동 안 함 → 화면에 에러 → 고객센터 → 기사 점검 필요 → 다음 날 기사 방문 → 수리비가 비싸 새로 사는 게 낫다 → 주말에 근처 몰·여러 대 비교 → 세일 제품 구입 → 한 달째 사용·매우 만족 → 빨래가 훨씬 편해짐",
+      "text": "Last month, I had a problem with my washing machine. One day, I tried to do the laundry, but the machine wouldn't start. An error message appeared on the screen, so I called customer service. They said a technician needed to check it. The next day, a repairman came to my house and looked at the machine. After inspecting it, he told me that it would be better to buy a new one because the repair would cost too much. That weekend, I went to a nearby mall and looked at several washing machines. After comparing a few models, I decided to buy one that was on sale. I've been using it for about a month now, and I'm very satisfied with it. It works well and makes doing laundry much more convenient.",
+      "up": [
+       "After inspecting it",
+       "I've been using it for about a month now"
+      ],
+      "ul": [
+       "Last month, I had",
+       "wouldn't start",
+       "appeared",
+       "came to my house",
+       "a new one",
+       "several washing machines",
+       "a few models",
+       "I've been using"
+      ],
+      "rev": [
+       "'the repair cost was too expensive' → 'the repair would cost too much' (cost는 expensive와 같이 쓰지 않음, 문법).",
+       "'a washer-dryer combo because it was on sale' → 'one that was on sale' (건조기가 따로 있어서 사실에 맞춤).",
+       "그 외 원문 유지."
+      ],
+      "al": [
+       "Looking back, I learned that sometimes it's smarter to replace something than to keep fixing it.",
+       "My son loves watching the new machine spin."
+      ],
       "kr": [
-       "아, 세탁기 문제가 제일 기억에 남아요.",
-       "지난달에 빨래를 하려는데 세탁기가 아예 작동하지 않았어요.",
-       "화면에 에러 메시지가 떴어요.",
-       "아이가 있어서 거의 매일 빨래를 하니까 완전히 당황했어요.",
-       "바로 고객센터에 전화했더니, 기사님이 확인해야 한다고 했어요.",
-       "다음 날 수리 기사님이 와서 세탁기를 봤어요.",
+       "지난달에 세탁기에 문제가 있었어요.",
+       "어느 날 빨래를 하려고 했는데 세탁기가 작동하지 않았어요.",
+       "화면에 에러 메시지가 떠서 고객센터에 전화했어요.",
+       "기사님이 확인해야 한다고 했어요.",
+       "다음 날 수리 기사님이 집에 와서 세탁기를 봤어요.",
        "점검해 보더니 수리비가 너무 많이 나와서 새로 사는 게 낫겠다고 했어요.",
-       "설상가상으로 빨래는 계속 쌓여 갔어요.",
-       "그래서 그 주말에 근처 쇼핑몰에 가서 세탁기 여러 대를 봤어요.",
-       "몇 가지 모델을 비교한 뒤에 세일 중인 걸로 골랐어요.",
-       "지금 한 달쯤 썼는데, 정말 만족해요.",
-       "예전 것보다 더 조용하고 빨라요.",
-       "돌아보면, 계속 고치는 것보다 바꾸는 게 더 현명할 때도 있다는 걸 배웠어요."
+       "그 주말에 근처 쇼핑몰에 가서 세탁기 여러 대를 봤어요.",
+       "몇 가지 모델을 비교한 뒤 세일 중인 걸로 사기로 했어요.",
+       "지금 한 달쯤 쓰고 있는데 정말 만족해요.",
+       "잘 돌아가고, 빨래하는 게 훨씬 편해졌어요."
       ]
      }
     ]
@@ -428,127 +555,172 @@ const DAYS = [
     "topic": "집 14·15 (House 14, 15)",
     "cards": [
      {
-      "id": "d1-q14",
-      "tag": "Q14 · 5~10년 주거 변화",
-      "q": "Houses have changed over the years. How is the structure of the houses in your country different compared to five years ago?",
-      "ko": "[비교 패턴·객관적 비교, 3번 비교 스크립트와 내용 공유] 서론(Over the last decade ~ whole different story) → [과거] 오래된 아파트·작은 방·편의시설 부족 → [현재] 현대식 단지·스마트홈(폰으로 조명·난방) → 공용시설(헬스장·카페·놀이터·키즈룸) → 1~2인 가구·작은 집·수납 → 나의 경우(식세기·로봇청소기 자리 고려) → 아쉬운 점(가격 상승) → All in all(사는 곳 → 삶의 질)",
-      "text": "Over the last decade, Korean homes have completely changed. Back in the day, a lot of people lived in older apartments with small rooms, and there weren't many shared facilities. Nowadays, it's a whole different story. Most new homes are in big, modern apartment complexes, and they come with smart-home systems. You can turn on the lights or the heating with your phone, even before you get home. On top of that, many complexes have shared facilities, like a gym, a café, a playground, and even a kids' room. Another big change is the size of homes. More people live alone or in small families these days, so smaller homes with lots of storage have become the norm. In my case, when I look at a new apartment, I check if there's room for a dishwasher and a robot vacuum, which was never a thing for my parents. The downside is that these new apartments have become much more expensive. All in all, a home is no longer just a place to sleep. It's become a place that makes your life better.",
-      "al": [
-       "I think this trend will keep going, with even smarter homes in the future.",
-       "I just hope they become more affordable, too."
-      ],
+      "id": "d1-q14b",
       "src": [
        "script"
       ],
-      "kr": [
-       "지난 10년 동안 한국의 집은 완전히 바뀌었어요.",
-       "예전에는 많은 사람이 방이 작은 오래된 아파트에 살았고, 공용 시설도 별로 없었어요.",
-       "요즘은 완전히 딴 얘기예요.",
-       "대부분의 새 집은 크고 현대적인 아파트 단지에 있고, 스마트홈 시스템이 갖춰져 있어요.",
-       "집에 도착하기 전에도 휴대폰으로 불이나 난방을 켤 수 있어요.",
-       "게다가 많은 단지에는 헬스장, 카페, 놀이터, 심지어 키즈룸 같은 공용 시설이 있어요.",
-       "또 하나의 큰 변화는 집의 크기예요.",
-       "요즘은 혼자 살거나 작은 가족으로 사는 사람이 많아서, 수납공간이 많은 작은 집이 보통이 됐어요.",
-       "제 경우엔 새 아파트를 볼 때 식기세척기와 로봇청소기 자리가 있는지 확인하는데, 부모님 세대에는 없던 일이에요.",
-       "단점은 이런 새 아파트가 훨씬 비싸졌다는 거예요.",
-       "전반적으로 집은 더 이상 잠만 자는 곳이 아니에요.",
-       "삶을 더 좋게 만들어 주는 곳이 됐어요."
-      ]
-     },
-     {
-      "id": "d1-q14b",
       "tag": "Q14 · 집 문제 해결 부모세대 vs 지금",
       "q": "Think about the last time you experienced some problem at home. How did you deal with it? How has the way people solve problems at home in your generation been different from your parents' generation?",
-      "ko": "[세대 비교] 서론(There's been a noticeable shift) → [부모세대] 아빠가 철물점에서 부품 사서 직접 고침(tackle the repair himself) → [지금] 관리사무소·수리 기사 먼저 → 퇴근 후 지쳐서 전문가에게 맡김 → 앱으로 리뷰·견적·예약 → 가전이 복잡해 전문 지식 필요 → 예: 지난달 세탁기도 바로 고객센터 → In a nutshell(요즘은 직접 고치기보다 전문가)",
-      "text": "Over the years, there's been a noticeable shift in how people deal with problems at home. When I was growing up, my parents handled pretty much everything on their own. Whenever something broke, my dad would just head to the local hardware store, grab the parts, and tackle the repair himself. These days, my approach is completely different. Whenever an issue pops up at home, my first move is to call the apartment management office or a repair service. After a long day at work, I'm usually too exhausted to fix things myself, so I'd much rather pay a professional. On top of that, smartphone apps have made it easier than ever to read reviews, compare prices, and book a service in just a few minutes. Plus, modern homes are full of complex appliances that need expert skills anyway. For example, when our washing machine broke last month, I didn't even try to fix it. I just called customer service, and a repairman came the next day. So in a nutshell, people nowadays lean heavily toward hiring experts rather than doing it themselves.",
+      "ko": "[세대 비교·Script] 서론(noticeable shift) → [부모세대] 단독주택·부모님이 직접·아빠가 철물점에서 부품 사서 직접 수리 → [지금] 관리사무소·수리 업체 먼저 → 퇴근 후 지쳐서 전문가에게 → On top of that: 앱으로 리뷰·가격 비교·바로 예약 → Plus: 요즘 집은 복잡한 가전이라 어차피 전문가 필요 → In a nutshell(DIY보다 전문가)",
+      "text": "Over the years, there's been a noticeable shift in how people deal with household problems. When I was growing up, I lived in a single-family house rather than an apartment. Back then, my parents handled pretty much all the maintenance issues on their own. Whenever something broke down, my dad would just head to the local hardware store, grab the necessary parts, and tackle the repair himself. These days, however, my approach is completely different. Whenever an issue pops up at home, my first instinct is to contact the apartment management office or call a professional repair service. After a long day at work, I'm usually too exhausted to mess around with home repairs, so I'd much rather pay a professional to take care of it. On top of that, smartphone apps have made it easier than ever to read reviews, compare prices, and book a service on the fly. Plus, modern homes are packed with complex appliances and high-tech systems that usually need experts anyway. So, in a nutshell, I feel like people nowadays lean heavily toward hiring experts rather than taking the DIY route.",
+      "up": [
+       "a noticeable shift",
+       "tackle the repair himself",
+       "pops up",
+       "on the fly",
+       "lean heavily toward"
+      ],
+      "ul": [
+       "When I was growing up, I lived",
+       "a single-family house",
+       "handled",
+       "would just head to",
+       "the local hardware store",
+       "the apartment management office",
+       "After a long day at work",
+       "have made"
+      ],
+      "rev": [
+       "'compare quotes, and book service appointments' → 'compare prices, and book a service' (쉬운 말).",
+       "'take care of it efficiently' → 'take care of it' (불필요한 단어 정리).",
+       "'packed with complex built-in appliances and high-tech systems that usually require specialized expertise' → 'packed with complex appliances and high-tech systems that usually need experts' (쉬운 말).",
+       "그 외 원문 유지. (약 78초로 80초 안쪽)"
+      ],
       "al": [
-       "My dad still laughs at me and says he could have fixed it in ten minutes.",
+       "My dad still says he could fix most things in ten minutes.",
        "Maybe he's right."
       ],
-      "src": [
-       "script"
-      ],
       "kr": [
-       "세월이 흐르면서 사람들이 집 문제를 해결하는 방식에 눈에 띄는 변화가 있었어요.",
-       "제가 자랄 때는 부모님이 거의 모든 걸 직접 해결하셨어요.",
-       "뭔가 고장 나면 아빠는 동네 철물점에 가서 부품을 사 와서 직접 고치셨어요.",
-       "요즘 제 방식은 완전히 달라요.",
-       "집에 문제가 생기면 저는 먼저 아파트 관리사무소나 수리 업체에 전화해요.",
-       "하루 종일 일하고 나면 너무 지쳐서 직접 고칠 힘이 없으니, 차라리 전문가에게 돈을 내는 게 나아요.",
-       "게다가 스마트폰 앱 덕분에 몇 분 만에 리뷰를 읽고, 가격을 비교하고, 서비스를 예약하는 게 어느 때보다 쉬워졌어요.",
-       "또 요즘 집에는 어차피 전문 기술이 필요한 복잡한 가전이 가득해요.",
-       "예를 들어 지난달 세탁기가 고장 났을 때, 저는 고쳐 볼 생각조차 안 했어요.",
-       "그냥 고객센터에 전화했고, 다음 날 수리 기사님이 왔어요.",
-       "한마디로, 요즘 사람들은 직접 하기보다 전문가에게 맡기는 쪽으로 크게 기울어 있어요."
+       "세월이 흐르면서 사람들이 집안 문제를 해결하는 방식에 눈에 띄는 변화가 있었어요.",
+       "제가 자랄 때는 아파트가 아니라 단독주택에 살았어요.",
+       "그때는 부모님이 관리 문제를 거의 다 직접 해결하셨어요.",
+       "뭔가 고장 나면 아빠는 동네 철물점에 가서 필요한 부품을 사 와서 직접 고치셨어요.",
+       "하지만 요즘 제 방식은 완전히 달라요.",
+       "집에 문제가 생기면 제 첫 반응은 아파트 관리사무소에 연락하거나 전문 수리 업체에 전화하는 거예요.",
+       "하루 종일 일하고 나면 너무 지쳐서 집 수리를 붙잡고 있을 힘이 없으니, 차라리 전문가에게 돈을 내고 맡기는 게 훨씬 나아요.",
+       "게다가 스마트폰 앱 덕분에 리뷰를 읽고, 가격을 비교하고, 바로 서비스를 예약하는 게 어느 때보다 쉬워졌어요.",
+       "또 요즘 집에는 어차피 전문가가 필요한 복잡한 가전과 첨단 시스템이 가득해요.",
+       "그러니까 한마디로, 요즘 사람들은 직접 고치기보다 전문가를 부르는 쪽으로 크게 기울어 있는 것 같아요."
       ]
      },
      {
       "id": "d1-q14c",
-      "tag": "Q14 · 새 가전이 가사노동에 가져온 변화",
-      "q": "Many homes today are equipped with new appliances or electronic devices that make everyday life more convenient. What are some of these new home appliances? How have they changed household responsibilities?",
-      "ko": "[가전 + 변화, 강사 스크립트 구조] MP(집에 최신 가전 가득) → 2021년에 거의 다 구매(식세기·로봇청소기·건조기·에어프라이어·제습기·전동커튼) → 최고는 건조기(예전엔 빨래 널기, 시간도 들고 장마철엔 고생 → 아이 때문에 거의 매일 빨래 → 1시간이면 다 마름, game-changer) → 로봇청소기(타이머, 아이 재우는 동안) → On top of that: 식세기 매일 밤 30분 절약 → 남편과 분담 변화(집안일이 한 사람 몫이 아님) → 아이와 놀 시간이 중요",
-      "text": "Oh, my home is packed with modern appliances. Back in 2021, we bought pretty much everything: a dishwasher, a robot vacuum, a dryer, an air fryer, a dehumidifier, and even electric curtains. But if I had to pick the best one, it would definitely be the dryer. In the past, I used to hang all our laundry on a rack, which was not only time-consuming but also a real hassle, especially in the rainy season. With a toddler, we do laundry almost every day. So now, I just throw everything into the dryer, and it's completely dry in about an hour. It's been a total game-changer. Another appliance I rely on heavily is the robot vacuum. I set a timer, and it cleans the floor while I'm putting my son to bed. On top of that, the dishwasher saves me about thirty minutes every night. These machines have also changed how my husband and I share the housework. Since they do the heavy work, chores aren't one person's job anymore. Thanks to them, I get more time to play with my son, and that's what really matters.",
-      "al": [
-       "I think appliances like these are especially helpful for working parents.",
-       "They give us back the one thing we never have enough of, which is time."
-      ],
       "src": [
-       "miri",
        "script"
       ],
+      "tag": "Q14 · 새 가전이 가사노동에 가져온 변화",
+      "q": "Many homes today are equipped with new appliances or electronic devices that make everyday life more convenient. What are some of these new home appliances? How have they changed household responsibilities?",
+      "ko": "[가전 여러 개·Script] 유용한 가전 많음(로봇청소기·에어프라이어) → 최고는 건조기(예전엔 널어 말림·시간도 들고 번거로움·날씨 나쁠 때 → 지금은 한 시간 안에 다 마름, game-changer) → 로봇청소기(타이머·알아서 청소·손 하나 까딱 안 함·시간과 노력 절약) → On top of that: 식기세척기(식사 후 넣기만) → 덕분에 집안일 시간이 확 줄어 하루가 훨씬 수월",
+      "text": "My house is equipped with quite a few useful home appliances, like a robot vacuum and an air fryer, but if I had to pick the best one, it would definitely be the dryer. In the past, I used to hang-dry all my laundry, which was not only time-consuming but also a real hassle, especially during bad weather. Nowadays, I just throw everything into the dryer, and it's completely dry within an hour, which has been a total game-changer. Another appliance I rely on heavily is the robot vacuum. I can just set a timer, and it moves around the house by itself and cleans the floors without me having to lift a finger. It saves me a ton of time and effort on daily cleaning. On top of that, I use my dishwasher all the time. After a meal, I load all of the dishes into the dishwasher, making cleanup super easy. Thanks to all these modern conveniences, I'm able to really cut down on time spent on household chores, which makes my daily routine so much more manageable.",
+      "up": [
+       "if I had to pick the best one",
+       "not only time-consuming but also a real hassle",
+       "a total game-changer",
+       "without me having to lift a finger"
+      ],
+      "ul": [
+       "used to hang-dry",
+       "within an hour",
+       "the robot vacuum",
+       "all of the dishes",
+       "household chores",
+       "time spent on"
+      ],
+      "rev": [
+       "'automatically navigates around the house, sweeping the floors' → 'moves around the house by itself and cleans the floors' (쉬운 말).",
+       "'an immense amount of time and effort on daily maintenance' → 'a ton of time and effort on daily cleaning' (쉬운 말).",
+       "'dish washer' → 'dishwasher' (철자).",
+       "'virtually effortless' → 'super easy', 'drastically cut down on' → 'really cut down on' (쉬운 말).",
+       "대시(—) 대신 쉼표. 그 외 원문 유지."
+      ],
+      "al": [
+       "With a toddler, we do laundry almost every day, so the dryer really saves me.",
+       "I honestly don't know how my mom did it without one."
+      ],
       "kr": [
-       "아, 우리 집은 최신 가전으로 꽉 차 있어요.",
-       "2021년에 거의 다 샀어요. 식기세척기, 로봇청소기, 건조기, 에어프라이어, 제습기, 심지어 전동 커튼까지요.",
-       "그래도 최고 하나를 고르라면 단연 건조기예요.",
-       "예전엔 빨래를 전부 건조대에 널었는데, 시간도 오래 걸리고 정말 번거로웠어요. 특히 장마철에요.",
-       "어린아이가 있어서 거의 매일 빨래를 해요.",
-       "그래서 이제는 전부 건조기에 넣기만 하면 한 시간쯤이면 완전히 말라요.",
-       "완전히 판도를 바꿔 놓았어요.",
+       "우리 집에는 로봇청소기나 에어프라이어 같은 유용한 가전이 꽤 많은데, 최고 하나를 고르라면 단연 건조기예요.",
+       "예전엔 빨래를 전부 널어서 말렸는데, 시간도 오래 걸리고 정말 번거로웠어요. 특히 날씨가 안 좋을 때요.",
+       "요즘은 전부 건조기에 넣기만 하면 한 시간 안에 완전히 마르는데, 완전히 판도를 바꿔 놓았어요.",
        "제가 많이 의지하는 또 다른 가전은 로봇청소기예요.",
-       "타이머를 맞춰 두면 제가 아들을 재우는 동안 바닥을 청소해요.",
-       "게다가 식기세척기 덕분에 매일 밤 30분 정도를 아껴요.",
-       "이 기계들은 남편과 제가 집안일을 나누는 방식도 바꿔 놓았어요.",
-       "힘든 일은 기계가 하니까, 집안일이 더 이상 한 사람의 몫이 아니에요.",
-       "덕분에 아들과 놀 시간이 더 생겼고, 그게 정말 중요한 거예요."
+       "타이머만 맞춰 두면 알아서 집 안을 돌아다니며 바닥을 청소해서, 저는 손 하나 까딱할 필요가 없어요.",
+       "매일 청소하는 시간과 노력을 엄청 아껴 줘요.",
+       "게다가 식기세척기도 항상 써요.",
+       "식사 후에 그릇을 전부 식기세척기에 넣기만 하면 되니까 뒷정리가 정말 쉬워요.",
+       "이런 편리한 최신 가전 덕분에 집안일에 드는 시간을 확 줄일 수 있어서, 하루 일과가 훨씬 수월해졌어요."
       ]
      },
      {
       "id": "d1-q15",
-      "tag": "Q15 · 주택 문제 뉴스",
-      "q": "Tell me about the problems people have when they rent or buy a house. Why do those problems occur, and how do people solve them? Or, think of a time when a housing issue was in the news. What was the issue, and why were people talking about it?",
-      "ko": "[뉴스 구조: 들은 뉴스 → 문제점 → 원인 → 결과 → 추가 문제 → 의견 → 기대 효과] 최근 서울 집값 꾸준히 상승 → 사거나 전·월세 구하기도 어려워짐 → 원인: 수도권 수요 > 공급 → 결과: 강남 등 인기 지역 급등·내 집 마련 멀어짐 → To make matters worse: 정책이 자주 바뀌어 언제 사야 할지 불확실 → 나와 동료들 이야기 → In my opinion: 공급 확대 + 안정적인 장기 정책 → 더 저렴하고 예측 가능하게",
-      "text": "Recently, there's been a lot of talk about how housing prices in Seoul have been steadily climbing. Many people are finding it really hard to buy, or even rent, a home, because prices have skyrocketed. A major reason is that so many people want to live in the Seoul area, but there just aren't enough homes for all of them. As a result, prices in popular neighborhoods like Gangnam have gone through the roof, and owning a home feels almost out of reach for young people. To make matters worse, housing policies change so often that buyers feel completely unsure about when to jump in. Honestly, my coworkers talk about this all the time, especially the ones who just got married. In my opinion, the government needs to focus on building more homes and making stable, long-term policies. That would go a long way toward making the housing market more affordable and much more predictable.",
-      "al": [
-       "I also think good jobs and schools outside Seoul would help a lot, so people don't all crowd into one city.",
-       "That would make life easier for young families like mine."
-      ],
       "src": [
        "script"
       ],
+      "tag": "Q15 · 주택 문제 뉴스",
+      "q": "Tell me about the problems people have when they rent a house. Why do those problems occur, and how do people solve those problems? Or, think of a time when a housing issue was in the news. What was the issue, and why were people talking about it?",
+      "ko": "[뉴스·Script] 들은 뉴스(서울 집값 꾸준히 상승) → 문제점(사거나 빌리기도 어려움) → 원인(서울에 살고 싶은 사람은 많은데 집이 부족) → 결과(강남 등 인기 지역 급등·내 집 마련이 거의 불가능하게 느껴짐) → To make matters worse(정책이 자주 바뀌어 언제 살지 불확실) → In my opinion(공급 확대 + 안정적 장기 정책) → 기대 효과(더 저렴하고 예측 가능)",
+      "text": "Recently, there's been a lot of talk about how housing prices in Seoul have been steadily climbing. Many people are finding it increasingly difficult to buy or even rent a home because prices have skyrocketed. A big reason is that so many people want to live in the Seoul area, but there just aren't enough homes for all of them. As a result, home prices in popular neighborhoods like Gangnam have gone way up, making it feel almost impossible to own a home. To make matters worse, real estate policies tend to change so often that buyers feel completely unsure about when to jump into the market. In my opinion, the government needs to focus on building more homes while making stable, long-term policies. That would go a long way toward making the housing market both more affordable and far more predictable.",
+      "up": [
+       "skyrocketed",
+       "To make matters worse",
+       "jump into the market",
+       "go a long way toward"
+      ],
+      "ul": [
+       "have been steadily climbing",
+       "to buy or even rent a home",
+       "aren't enough homes",
+       "have gone way up",
+       "tend to change",
+       "In my opinion"
+      ],
+      "rev": [
+       "'A major factor driving this trend is the massive demand to live in the Seoul metropolitan area, which far outweighs the available housing supply.' → 'A big reason is that so many people want to live in the Seoul area, but there just aren't enough homes for all of them.' (쉬운 말).",
+       "'property values … have surged, making homeownership feel virtually out of reach' → 'home prices … have gone way up, making it feel almost impossible to own a home' (쉬운 말).",
+       "'so frequently that buyers are left feeling completely uncertain' → 'so often that buyers feel completely unsure' (쉬운 말).",
+       "'expanding housing supply while establishing' → 'building more homes while making' (쉬운 말).",
+       "그 외 원문 유지. (약 55초, 강사 원문 길이 그대로라 늘리지 않음)"
+      ],
+      "al": [
+       "Some young couples I know are even moving out of Seoul because of this.",
+       "I hope things get better for the next generation."
+      ],
       "kr": [
        "최근 서울 집값이 꾸준히 오르고 있다는 이야기가 많아요.",
-       "가격이 치솟아서 많은 사람이 집을 사기는커녕 빌리기도 정말 어려워하고 있어요.",
-       "큰 이유는 서울 지역에 살고 싶은 사람은 너무 많은데 그만큼 집이 충분하지 않다는 거예요.",
-       "그 결과 강남 같은 인기 지역의 집값은 하늘 높은 줄 모르고 올랐고, 젊은 사람들에게 내 집 마련은 거의 손에 닿지 않는 일처럼 느껴져요.",
-       "설상가상으로 주택 정책이 너무 자주 바뀌어서, 집을 사려는 사람들은 언제 사야 할지 전혀 확신이 없어요.",
-       "솔직히 제 동료들도 이 얘기를 늘 해요. 특히 막 결혼한 사람들이요.",
-       "제 생각에는 정부가 집을 더 많이 짓고 안정적인 장기 정책을 만드는 데 집중해야 해요.",
+       "가격이 치솟아서 많은 사람이 집을 사기는커녕 빌리기도 점점 더 어려워하고 있어요.",
+       "큰 이유는 서울 지역에 살고 싶은 사람은 정말 많은데, 그 사람들이 다 살 만큼 집이 충분하지 않다는 거예요.",
+       "그 결과 강남 같은 인기 동네의 집값이 크게 올라서, 내 집을 갖는 게 거의 불가능하게 느껴져요.",
+       "설상가상으로 부동산 정책이 너무 자주 바뀌어서, 집을 사려는 사람들은 언제 시장에 들어가야 할지 전혀 확신이 없어요.",
+       "제 생각에는 정부가 안정적인 장기 정책을 만들면서 집을 더 많이 짓는 데 집중해야 해요.",
        "그렇게 하면 주택 시장이 더 저렴해지고 훨씬 예측 가능해지는 데 큰 도움이 될 거예요."
       ]
      },
      {
       "id": "d1-q15b",
-      "tag": "Q15 · 유용한 가전 세부 묘사",
-      "q": "Now talk about a specific modern appliance or device that people consider useful or convenient at home. What do people say about this home appliance or device?",
-      "ko": "[가전 하나 자세히 + 사람들 평가] MP(한국에서 식기세척기가 필수가 됨) → 생김새(싱크대 아래·12인용·선반 2단·수저통) → 사용법(애벌 헹굼 → 넣고 → 코스 선택 → 90분) → 고온 세척·건조라 아이 식기에 좋음 → 사람들 말: 결혼 선물 1순위·'이모님'이라고 부름 → 단점: 처음 가격·자리·전기 → 그래도 써 본 사람은 다시 못 돌아간다고 함 → So yeah 추천",
+      "src": [
+       "miri"
+      ],
+      "tag": "Q15 · 생활에 유용한 가전 세부 묘사",
+      "q": "Now talk about a specific modern appliance or device that people consider as useful or convenient at home. What do people say about this home appliance or device?",
+      "ko": "[가전 하나 자세히·Miri Note(강사 스크립트 없음)] MP(한국에서 식세기는 필수) → 생김새(싱크대 아래·작은 오븐 크기·선반 2단·수저 바구니) → 사용법(헹구고·넣고·코스·자리 뜨기 → 90분) → 뜨거운 물이라 아이 식기에 좋음 → 사람들 말(결혼 선물 1순위·'도우미') → 단점(가격·자리·전기) → 그래도 못 돌아감 → So yeah 추천",
       "text": "These days in Korea, a lot of people say a dishwasher is a must-have. Mine sits right under the kitchen sink. It's about the size of a small oven, and inside, there are two racks and a little basket for spoons and chopsticks. Using it is really simple. I rinse the dishes quickly, load them in, pick a mode, and walk away. About ninety minutes later, everything is clean and dry. It washes with really hot water, so it's great for my son's plates and cups, too. People around me love it. My coworkers say it's the number-one wedding gift, and some people even call it their \"helper,\" because it feels like having someone else do the dishes. Of course, there are some downsides. It's pretty expensive at first, it takes up space, and it uses some electricity. But almost everyone who tries it says they can never go back. So yeah, if you ask me, I'd totally recommend it to any busy family.",
+      "up": [
+       "a must-have",
+       "walk away",
+       "can never go back"
+      ],
+      "ul": [
+       "under the kitchen sink",
+       "two racks",
+       "spoons and chopsticks",
+       "with really hot water",
+       "plates and cups",
+       "the number-one wedding gift"
+      ],
+      "rev": [
+       "수정 없음. (강사 스크립트가 없는 질문이라 기존 초안 유지, 약 66초)"
+      ],
       "al": [
        "Our dryer is another favorite, but the dishwasher is the one I use every single day.",
        "Small machines like these really change everyday life."
-      ],
-      "src": [
-       "miri",
-       "script"
       ],
       "kr": [
        "요즘 한국에서는 많은 사람이 식기세척기를 꼭 있어야 하는 물건이라고 말해요.",
@@ -571,18 +743,20 @@ const DAYS = [
   ],
   "exprs": [
    "Well, off the top of my head,",
+   "I've been living in ~ for about five years, since I got married.",
    "It's tucked away in a quiet neighborhood.",
-   "It's super handy because…",
-   "It has a cozy and lively vibe.",
    "my absolute go-to place",
-   "Over the last twenty years, … has completely changed.",
-   "Back then, it wasn't as convenient as it is today.",
-   "I've had my fair share of problems.",
-   "I was totally flustered. / I tried to stay calm.",
+   "There have been quite a few changes in ~",
+   "it comes with its fair share of ~",
+   "back-to-back",
+   "completely worth it",
+   "There's been a noticeable shift in ~",
+   "on the fly",
+   "not only time-consuming but also a real hassle",
+   "a total game-changer",
+   "without me having to lift a finger",
    "To make matters worse,",
-   "From that experience, I learned…",
-   "There's been a noticeable shift in…",
-   "It's been a total game-changer."
+   "go a long way toward ~"
   ]
  },
  {
@@ -2556,23 +2730,34 @@ const CARDS = {};
 DAYS.forEach(d => d.groups.forEach(g => (g.cards||[]).forEach(c => { c.day = d.n; CARDS[c.id] = c; })));
 const esc = s => String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
 const sentences = t => (t.match(/[^.!?]+[.!?]+['"]?/g) || [t]).map(s => s.trim()).filter(Boolean);
-const MAXSEC = 120, GOODMIN = 60, GOODMAX = 90;
+const MAXSEC = 120, GOODMIN = 60, GOODMAX = 80;
 const isShort = c => /^콤보1/.test(c.tag) || /^Q1[12]\b/.test(c.tag);
-const tgt = c => isShort(c) ? { min: 45, max: 75, label: "약 1분", lo: "0:45", hi: "1:15" } : { min: 75, max: 105, label: "약 1분 30초", lo: "1:15", hi: "1:45" };
+const tgt = c => ({ min: 60, max: 80, label: "60~80초", lo: "1:00", hi: "1:20" });
 const fmt = sec => Math.floor(sec / 60) + ":" + String(Math.round(sec % 60)).padStart(2, "0");
-const estSec = t => Math.round((t.split(/\s+/).length / 125) * 60 / 5) * 5;
+const estSec = t => Math.round((t.split(/\s+/).length / 150) * 60 / 5) * 5;   // 자연스러운 말하기 속도 분당 150단어
 const $ = (sel, el) => (el || document).querySelector(sel);
 
 let store = {};
 try { store = JSON.parse(localStorage.getItem("opic13") || "{}"); } catch (e) { store = {}; }
 const save = () => { try { localStorage.setItem("opic13", JSON.stringify(store)); } catch (e) {} };
 
+/* ===== 과제 체크 (공부 기록과 별개) ===== */
+const HW = new Set(); let HW_ONLY = false;
+try { JSON.parse(localStorage.getItem("opic_hw") || "[]").forEach(x => HW.add(x)); HW_ONLY = localStorage.getItem("opic_hw_only") === "1"; } catch (e) {}
+const saveHW = () => { try { localStorage.setItem("opic_hw", JSON.stringify([...HW])); localStorage.setItem("opic_hw_only", HW_ONLY ? "1" : "0"); } catch (e) {} };
+document.addEventListener("change", e => {
+  const cb = e.target.closest("[data-hw]"); if (!cb) return;
+  const id = holderId(cb); if (!id) return;
+  if (cb.checked) HW.add(id); else HW.delete(id); saveHW();
+  const c = CARDS[id], y = window.scrollY; renderDay(c.day);
+  const el = document.getElementById(id); if (el) { try { el.scrollIntoView({ block: "start" }); } catch (er) { window.scrollTo(0, y); } }
+});
 /* ===== 화면 ===== */
 const TIPS = `<details class="tips"><summary>📌 강사 체크리스트 (스크립트에 반영됨)</summary><ol>
 <li><b>문법</b>: 전치사 · 관사(a/an/the) · 단수/복수 실수 줄이기, <b>시제 일치 필수</b>.<br>3콤보 = 1번 <b>현재</b> / 2번 더 자세히·최근 경험(<b>과거 필수</b>) / 3번 <b>비교</b>(과거+현재)</li>
 <li><b>발음</b>: 녹음을 텍스트로 바꿔서 인식 안 되는 단어·뭉개지는 부분 찾기 → 말하기 테스트 결과의 <span style="color:var(--alert)">빨간 단어</span>와 🔑 AI 발음 분석 활용. 강세 · 억양 · 연음 살리기</li>
 <li><b>템플릿 느낌 빼기</b>: 친구한테 말하듯, 구조는 유지.<br><span class="no">Let me describe</span> <span class="no">First, Second</span> <span class="no">Furthermore</span> <span class="no">Moreover</span> <span class="no">In conclusion</span> <span class="no">질문 그대로 반복</span><br><span class="ok">For one thing · Right off the bat · On top of that · Come to think of it · To be honest · In a nutshell · Also · Another thing is · So yeah · Long story short</span></li>
-<li><b>구체성 · 길이</b>: 묘사/롤플레이 1분, 비교/경험/뉴스 1분 30초, 길어도 2분 이내. 결론 서두르지 않기(<span class="no">That's my memorable experience</span>), 꼬리물기로 실제 대화하듯 자세하게</li>
+<li><b>구체성 · 길이</b>: 모든 답변 60~80초(선생님 기준), 길어도 2분 이내. 이미 첨삭받은 스크립트는 꼭 필요할 때만 고치기. 결론 서두르지 않기(<span class="no">That's my memorable experience</span>), 꼬리물기로 실제 대화하듯 자세하게</li>
 </ol></details>`;
 function mockChip(k, cur) {
   const ready = mockReady(k);
@@ -2591,11 +2776,13 @@ function cardHTML(c) {
   const ps = paras(c.text);
   const body = scriptBody(c);
   return `<article class="card" id="${c.id}" data-id="${c.id}">
-  <div class="chead"><span class="lft"><span class="tag${c.tag.startsWith("Q") ? " q" : ""}">${esc(c.tag)}</span>${(c.src || []).map(s => `<span class="src ${s === "miri" ? "sm" : "ss"}">${s === "miri" ? "Miri Note" : "Script"}</span>`).join("")}</span><span class="right"><span class="est" title="분당 125단어 기준">⏱ 약 ${fmt(estSec(c.text))}<span class="goalt">목표 ${tgt(c).label}</span></span><span class="best" data-best></span></span></div>
+  <div class="chead"><span class="lft"><span class="tag${c.tag.startsWith("Q") ? " q" : ""}">${esc(c.tag)}</span>${(c.src || []).map(s => `<span class="src ${s === "miri" ? "sm" : "ss"}">${s === "miri" ? "Miri Note" : "Script"}</span>`).join("")}</span><span class="right"><span class="est" title="분당 150단어 기준">⏱ 약 ${fmt(estSec(c.text))}<span class="goalt">목표 ${tgt(c).label}</span></span><span class="best" data-best></span><label class="hw"><input type="checkbox" data-hw${HW.has(c.id) ? " checked" : ""}> 과제</label></span></div>
   <p class="q" data-q>${esc(c.q)}</p>
   <div class="tts-row"><button class="b sm" data-act="ttsq" data-state="0">🔊 질문 듣기</button><button class="b sm" data-act="ttsa" data-state="0" data-n="${ps.length}">🔊 답변 전체 듣기 (${ps.length}문단)</button></div>
   <div class="hint"><b>흐름</b> ${esc(c.ko)}</div>
+  ${(c.up || c.ul) ? `<p class="legend"><mark class="up">형광펜</mark> 업그레이드 표현 · <u class="ck">밑줄</u> 틀리기 쉬운 관사·전치사·복수·시제</p>` : ""}
   <div class="script" data-script>${body}</div>
+  ${c.rev ? `<details class="rev"><summary>✏️ 수정 내역 · 예상 ${fmt(estSec(c.text))}</summary><ul>${c.rev.map(x => `<li>${esc(x)}</li>`).join("")}</ul></details>` : ""}
   <div class="acts">
     <button class="b" data-act="blind">가리기</button>
     <button class="b test" data-act="test">🎤 말하기 테스트</button>
@@ -2621,9 +2808,14 @@ function renderDay(n) {
     html += TIPS;
     if (d.exprs) html += `<details class="tips"><summary>💬 핵심 표현 (${d.exprs.length})</summary><div class="expr" style="margin-top:8px">${d.exprs.map(x => `<span>${esc(x)}</span>`).join("")}</div></details>`;
     html += `<details class="tips"><summary>📊 연습 기록 ${done} / ${all.length} · 카드 바로가기</summary><nav class="jump" style="margin-top:8px" aria-label="이 일차의 카드">${all.map(c => `<a href="#${c.id}">${esc(c.tag.split(" · ")[0])}${c.tag.includes("·") ? "·" + esc(c.tag.split(" · ")[1].replace(/\(.*\)/, "")) : ""}</a>`).join("")}</nav></details>`;
-    d.groups.forEach(g => {
-      html += `<h3 class="topic">${esc(g.topic)}</h3>`;
-      if (g.cards) html += g.cards.map(cardHTML).join("");
+    const hwCards = d.groups.flatMap(g => g.cards || []).filter(c => HW.has(c.id));
+    html += `<div class="hwbar"><button type="button" class="b sm" data-hwonly="1" data-state="${HW_ONLY ? "2" : "0"}">${HW_ONLY ? "✅ 체크한 것만 보는 중 · 전체 보기" : "☑️ 체크한 것만 보기"}</button><span>과제 ${hwCards.length}개</span></div>`;
+    if (hwCards.length) html += `<h3 class="topic hwtopic">📌 과제</h3>` + hwCards.map(c => cardHTML(CARDS[c.id])).join("");
+    else if (HW_ONLY) html += `<div class="empty">체크한 과제가 아직 없어요. 카드 오른쪽 위 '과제'를 체크해 보세요.</div>`;
+    if (!HW_ONLY) d.groups.forEach(g => {
+      const rest = (g.cards || []).filter(c => !HW.has(c.id));
+      if (rest.length || g.pending) html += `<h3 class="topic">${esc(g.topic)}</h3>`;
+      html += rest.map(c => cardHTML(CARDS[c.id])).join("");
       if (g.pending) html += pendingHTML(g.pending);
     });
   }
@@ -2643,7 +2835,7 @@ const synth = window.speechSynthesis;
 const KEEP = [];                                   // Chrome의 utterance GC 끊김 방지용 참조 보관
 const TS = { voices: [], voice: null, rate: 1.0, rec: true };
 /* 미리 만든 선생님 녹음(mp3, 보이스 Heart). id → { t: [[시작,끝] 문장별 초], dur, n } */
-const MP3 = {"d1-c1":{"t":[[0.25,4.474],[5.174,10.401],[10.721,17.27],[17.59,21.089],[21.409,24.566],[25.266,27.933],[28.253,33.671],[33.991,38.578]],"dur":39.078,"n":8},"d1-c2":{"t":[[0.25,3.578],[4.278,11.083],[11.403,13.323],[13.643,16.267],[16.967,21.127],[21.447,24.306],[24.626,29.405],[30.105,31.833],[32.153,34.563],[34.883,40.323],[41.023,45.311],[45.631,49.471],[49.791,55.935]],"dur":56.435,"n":13},"d1-c3":{"t":[[0.25,4.559],[5.259,8.161],[8.481,12.427],[12.747,15.862],[16.182,20.897],[21.597,24.285],[24.605,29.703],[30.023,31.965],[32.285,38.023],[38.723,45.593],[45.913,48.131],[48.451,51.865],[52.185,55.235],[55.935,59.733]],"dur":60.233,"n":14},"d1-q14":{"t":[[0.25,3.855],[4.555,10.977],[11.297,13.494],[13.814,19.382],[20.082,24.285],[24.605,31.453],[31.773,34.205],[34.905,41.774],[42.094,50.307],[50.627,54.894],[55.594,58.794],[59.114,61.439]],"dur":61.939,"n":12},"d1-q15":{"t":[[0.25,5.882],[6.582,13.11],[13.43,19.915],[20.235,28.491],[28.811,36.022],[36.722,42.098],[42.418,49.309],[49.629,54.898]],"dur":55.398,"n":8},"d1-q15b":{"t":[[0.25,4.367],[5.067,7.094],[7.414,13.878],[14.198,15.841],[16.541,20.487],[20.807,23.943],[24.263,28.871],[29.571,31.001],[31.321,39.683],[40.003,41.902],[42.602,47.21],[47.53,50.837],[51.157,55.509]],"dur":56.009,"n":13},"d1-q14c":{"t":[[0.25,2.853],[3.553,14.155],[14.475,18.038],[18.358,27.275],[27.975,30.855],[31.175,36.189],[36.509,38.301],[39.001,42.691],[43.011,46.979],[47.299,51.161],[51.861,56.042],[56.362,60.053],[60.373,64.917]],"dur":65.417,"n":13},"d1-c4":{"t":[[0.25,5.05],[5.75,7.094],[7.414,9.462],[9.782,13.195],[13.895,18.269],[18.589,21.213],[21.533,24.733],[25.433,28.035],[28.355,33.859],[34.179,40.409],[41.109,47.253],[47.573,52.607]],"dur":53.107,"n":12},"d1-c4b":{"t":[[0.25,4.09],[4.79,6.241],[6.561,8.929],[9.249,11.553],[12.253,17.33],[17.65,22.621],[22.941,25.351],[26.051,29.721],[30.041,34.499],[34.819,36.27],[36.97,42.517],[42.837,45.823],[46.143,51.477]],"dur":51.977,"n":13},"d1-c6":{"t":[[0.25,3.983],[4.683,8.609],[8.929,11.062],[11.382,15.67],[16.37,20.85],[21.17,24.37],[24.69,30.151],[30.851,33.625],[33.945,38.467],[38.787,42.158],[42.858,46.997],[47.317,49.386],[49.706,54.591]],"dur":55.091,"n":13},"d1-q14b":{"t":[[0.25,5.071],[5.771,9.782],[10.102,17.078],[17.398,20.022],[20.342,27.062],[27.762,34.503],[34.823,42.781],[43.101,48.285],[48.605,53.298],[53.998,57.689],[58.009,64.366]],"dur":64.866,"n":11}};
+const MP3 = {"d1-c2":{"t":[[0.25,3.578],[4.278,11.083],[11.403,13.323],[13.643,16.267],[16.967,21.127],[21.447,24.306],[24.626,29.405],[30.105,31.833],[32.153,34.563],[34.883,40.323],[41.023,45.311],[45.631,49.471],[49.791,55.935]],"dur":56.435,"n":13},"d1-q15b":{"t":[[0.25,4.367],[5.067,7.094],[7.414,13.878],[14.198,15.841],[16.541,20.487],[20.807,23.943],[24.263,28.871],[29.571,31.001],[31.321,39.683],[40.003,41.902],[42.602,47.21],[47.53,50.837],[51.157,55.509]],"dur":56.009,"n":13},"d1-c4":{"t":[[0.25,5.05],[5.75,7.094],[7.414,9.462],[9.782,13.195],[13.895,18.269],[18.589,21.213],[21.533,24.733],[25.433,28.035],[28.355,33.859],[34.179,40.409],[41.109,47.253],[47.573,52.607]],"dur":53.107,"n":12}};
 const AUD = new Audio(); AUD.preload = "auto";
 try { AUD.preservesPitch = true; AUD.mozPreservesPitch = true; AUD.webkitPreservesPitch = true; } catch (e) {}
 let ONE = null;                                    // 문장 하나만 재생할 때 { end, el }
@@ -2962,9 +3154,25 @@ function initTTSPanel() {
 
 
 /* --- 전체 화면 읽기 (질문 고정 + 읽는 문장 자동 재배치) --- */
+function deco(c, s) {                              // up = 형광펜, ul = 주황 밑줄
+  if (!c.up && !c.ul) return esc(s);
+  const marks = [], isW = ch => /[A-Za-z0-9']/.test(ch || "");
+  const add = (arr, cls) => (arr || []).forEach(p => {
+    let k = s.indexOf(p);
+    while (k >= 0) { if (!isW(s[k - 1]) && !isW(s[k + p.length])) marks.push([k, k + p.length, cls]); k = s.indexOf(p, k + 1); }
+  });
+  add(c.up, "up"); add(c.ul, "ck");
+  if (!marks.length) return esc(s);
+  marks.sort((x, y) => x[0] - y[0] || y[1] - x[1]);
+  const keep = []; let end = -1;
+  for (const m of marks) if (m[0] >= end) { keep.push(m); end = m[1]; }
+  let out = "", pos = 0;
+  for (const [x, y, cl] of keep) { const t = cl === "up" ? "mark" : "u"; out += esc(s.slice(pos, x)) + `<${t} class="${cl}">` + esc(s.slice(x, y)) + `</${t}>`; pos = y; }
+  return out + esc(s.slice(pos));
+}
 function scriptBody(c) {
   const ss = sentences(c.text), ps = paras(c.text);
-  return ps.map(idx => `<p class="para">${idx.map(i => `<span class="s${i === 0 ? " mp" : ""}" data-i="${i}" title="누르면 이 문장부터 읽어 줘요">${esc(ss[i])}</span>`).join(" ")}</p>`).join("");
+  return ps.map(idx => `<p class="para">${idx.map(i => `<span class="s${i === 0 ? " mp" : ""}" data-i="${i}" title="누르면 이 문장부터 읽어 줘요">${deco(c, ss[i])}</span>`).join(" ")}</p>`).join("");
 }
 function toggleFullscreen() {
   try {
@@ -3593,6 +3801,8 @@ function mockAction(b) {
 
 /* ===== 이벤트 ===== */
 document.addEventListener("click", e => {
+  const hwo = e.target.closest("[data-hwonly]");
+  if (hwo) { HW_ONLY = !HW_ONLY; saveHW(); const d = +(localStorage.getItem("opic13_day") || 1); renderDay(DAYS.some(x => x.n === d) ? d : 1); return; }
   const dayBtn = e.target.closest("[data-day]");
   if (dayBtn) { ttsStop(); stopTest(true); renderDay(+dayBtn.dataset.day); return; }
   const mockBtn = e.target.closest("[data-mock]");

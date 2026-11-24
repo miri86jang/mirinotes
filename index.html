@@ -5147,17 +5147,36 @@ window.HWPL=(function(){
       const base=b.dataset.kind==="up"?"🌙 표현듣기":"🌙 전체듣기"; b.textContent= !me?base: mode===1?"▶ 1회":"🔁 반복"; });
     let n=document.querySelector(".hwnow"); const bar=document.querySelector(".hwbar");
     if(mode&&bar){ if(!n){n=document.createElement("span");n.className="hwnow";bar.appendChild(n);} const it=list[i]; n.textContent= it?`${it.label} (${it.k}/${it.of}) · 한 번 더 누르면 ${mode===1?"무한 반복":"정지"}`:""; }
-    else if(n) n.remove(); }
-  function play(){ const it=list[i]; if(!it){ stop(); return; } A.src=it.src; try{ A.playbackRate=(typeof TS!=="undefined"&&TS.rate)||1; }catch(e){} const p=A.play(); if(p&&p.catch) p.catch(()=>{}); label(); }
-  function next(){ if(!mode) return; const g=(list[i]&&list[i].gap)||1000; i++; if(i>=list.length){ if(mode===2) i=0; else { stop(); return; } } gapT=setTimeout(play,g); }
+    else if(n) n.remove(); panel(); }
+  /* 표현듣기 전용 창: 지금 표현을 크게 보여 줌 */
+  const ov=document.createElement("div"); ov.id="upl"; ov.className="upx"; ov.hidden=true; document.body.appendChild(ov);
+  let paused=false;
+  function panel(){ if(kind!=="up"||!mode){ ov.hidden=true; document.documentElement.style.overflow=""; return; }
+    const it=list[i]; if(!it||!it.x) return; const x=it.x, hl=(t,e)=>{ const k=t.toLowerCase().indexOf(e.toLowerCase()); return k<0?esc(t):esc(t.slice(0,k))+"<mark>"+esc(t.slice(k,k+e.length))+"</mark>"+esc(t.slice(k+e.length)); };
+    ov.innerHTML=`<div class="upx-in"><div class="upx-top"><b>🌙 표현듣기</b><span class="upx-tabs"><button type="button" class="b sm" data-ul="close">✕ 닫기</button></span></div>
+      <div class="upx-prog"><i style="width:${Math.round(it.k/it.of*100)}%"></i></div><p class="upx-n">${it.k} / ${it.of} · ${esc((CARDS[x.id]||{}).tag||"")}</p>
+      <div class="upx-card"><p><span class="upx-en">${esc(x.en)}</span></p>${x.ko?`<p class="upx-ko big">${esc(x.ko)}</p>`:""}${x.tip?`<p class="upx-tip">💡 ${esc(x.tip)}</p>`:""}
+      ${x.ctx?`<div class="upx-ctx"><small>스크립트 속 문장</small><p>${hl(x.ctx,x.en)}</p>${x.ctxKo?`<p class="k">${esc(x.ctxKo)}</p>`:""}</div>`:""}</div>
+      <div class="upx-nav"><button type="button" class="b" data-ul="prev">◀ 이전</button><button type="button" class="b pri" data-ul="pause">${paused?"▶ 재개":"⏸ 일시정지"}</button><button type="button" class="b" data-ul="next">다음 ▶</button></div>
+      <div class="upx-nav"><button type="button" class="b" data-ul="loop">${mode===2?"🔁 전체 반복 켜짐":"1회 재생 (누르면 전체 반복)"}</button></div></div>`;
+    ov.hidden=false; document.documentElement.style.overflow="hidden"; }
+  function jump(d){ const it=list[i]; if(!it) return; let k=it.k+d; if(k<1) k=mode===2?it.of:1; if(k>it.of){ if(mode===2) k=1; else { stop(); return; } }
+    clearTimeout(gapT); i=list.findIndex(e=>e.k===k); paused=false; play(); }
+  ov.addEventListener("click",e=>{ const b=e.target.closest("[data-ul]"); if(!b) return; e.stopPropagation(); const a=b.dataset.ul;
+    if(a==="close") stop();
+    else if(a==="prev") jump(-1); else if(a==="next") jump(1);
+    else if(a==="loop"){ mode=mode===2?1:2; label(); }
+    else if(a==="pause"){ if(!paused){ paused=true; clearTimeout(gapT); A.pause(); label(); } else { paused=false; if(A.src&&A.currentTime>0&&!A.ended&&A.currentTime<(A.duration||1e9)-0.05){ const p=A.play(); if(p&&p.catch) p.catch(()=>{}); label(); } else next(); } } });
+  function play(){ const it=list[i]; if(!it){ stop(); return; } paused=false; A.src=it.src; try{ A.playbackRate=(typeof TS!=="undefined"&&TS.rate)||1; }catch(e){} const p=A.play(); if(p&&p.catch) p.catch(()=>{}); label(); }
+  function next(){ if(!mode||paused) return; const g=(list[i]&&list[i].gap)||1000; i++; if(i>=list.length){ if(mode===2) i=0; else { stop(); return; } } gapT=setTimeout(play,g); }
   A.addEventListener("ended",next); A.addEventListener("error",()=>{ if(mode){ const g=list[i]; if(g) g.gap=300; next(); } });
   function build(ids,k){ const L=[];
-    if(k==="up"){ const it=upItems(ids); it.forEach((x,j)=>{ L.push({src:x.src,gap:900,label:`${x.en} — ${x.ko}`,k:j+1,of:it.length}); L.push({src:x.src,gap:2000,label:`${x.en} — ${x.ko}`,k:j+1,of:it.length}); }); }
+    if(k==="up"){ const it=upItems(ids); it.forEach((x,j)=>{ L.push({src:x.src,gap:900,label:`${x.en} — ${x.ko}`,k:j+1,of:it.length,x}); L.push({src:x.src,gap:2000,label:`${x.en} — ${x.ko}`,k:j+1,of:it.length,x}); }); }
     else ids.forEach((id,j)=>{ const c=CARDS[id]; L.push({src:"audio/cue.mp3",gap:250,label:`${c.tag}`,k:j+1,of:ids.length}); L.push({src:recSrc(id),gap:2200,label:`${c.tag} · 답변`,k:j+1,of:ids.length}); });   // 카드마다 띵 → 스크립트만
     return L; }
   function start(ids,k){ try{ if(typeof TTSX!=="undefined") TTSX.stopAll(); }catch(e){} try{ if(typeof AUD!=="undefined") AUD.pause(); }catch(e){}
     clearTimeout(gapT); list=build(ids,k); kind=k; i=0; mode=1; play(); }
-  function stop(){ mode=0; clearTimeout(gapT); A.pause(); label(); }
+  function stop(){ mode=0; paused=false; clearTimeout(gapT); A.pause(); label(); }
   document.addEventListener("click",e=>{ const b=e.target.closest("[data-hwpl]"); if(!b) return; e.preventDefault(); e.stopPropagation();
     const k=b.dataset.kind||"all";
     if(mode===0||kind!==k) start(b.dataset.hwpl.split(",").filter(Boolean),k);
@@ -5171,7 +5190,7 @@ window.HWPL=(function(){
   const SRX=window.SpeechRecognition||window.webkitSpeechRecognition;
   const ov=document.createElement("div"); ov.id="upx"; ov.className="upx"; ov.hidden=true; document.body.appendChild(ov);
   const A=new Audio(); let S=null;
-  function say(src){ try{ HWPL.stop(); }catch(e){} A.src=src; try{ A.playbackRate=(typeof TS!=="undefined"&&TS.rate)||1; }catch(e){} const p=A.play(); if(p&&p.catch) p.catch(()=>{}); }
+  function say(src,loop){ try{ HWPL.stop(); }catch(e){} A.loop=!!loop; A.src=src; try{ A.playbackRate=(typeof TS!=="undefined"&&TS.rate)||1; }catch(e){} const p=A.play(); if(p&&p.catch) p.catch(()=>{}); }
   const hl=(t,e)=>{ const k=t.toLowerCase().indexOf(e.toLowerCase()); return k<0?esc(t):esc(t.slice(0,k))+"<mark>"+esc(t.slice(k,k+e.length))+"</mark>"+esc(t.slice(k+e.length)); };
   const hint=e=>e.split(/\s+/).map(w=>w.replace(/^([^A-Za-z]*[A-Za-z])([A-Za-z'’-]*)/,(m,a,b)=>a+b.replace(/[A-Za-z]/g,"_"))).join(" ");
   const toks=t=>t.toLowerCase().replace(/[’']/g,"").replace(/[^a-z0-9\s]/g," ").split(/\s+/).filter(Boolean);
@@ -5216,8 +5235,12 @@ window.HWPL=(function(){
     if(u==="star"){ b.checked?S.star.add(S.i):S.star.delete(S.i); return; }
     if(u==="tolearn"){ stopRec(); S.stage="learn"; return draw(); }
     if(u==="toquiz"){ stopRec(); const st=[...S.star].map(k=>S.items[k]); return startQuiz(st.length&&confirm(`⭐ 헷갈림 ${st.length}개만 풀까요?\n(취소 = 전체 ${S.items.length}개)`)?st:null); }
-    if(u==="play") return say(S.items[S.i].src);
-    if(u==="playq") return say(S.q[S.qi].src);
+    if(u==="play"||u==="playq"){                  // 듣기: 1번 = 1회 · 2번 = 무한 반복 · 3번 = 정지
+      const src=u==="play"?S.items[S.i].src:S.q[S.qi].src, base=u==="play"?"🔊 듣기":"🔊 정답 듣기", st=+(b.dataset.st||0);
+      if(st===0){ say(src); b.dataset.st="1"; b.textContent="🔁 무한 반복"; }
+      else if(st===1){ say(src,true); b.dataset.st="2"; b.textContent="■ 정지"; }
+      else { A.loop=false; A.pause(); b.dataset.st="0"; b.textContent=base; }
+      return; }
     if(u==="prev"){ S.i=Math.max(0,S.i-1); draw(); return say(S.items[S.i].src); }
     if(u==="next"){ S.i=Math.min(S.items.length-1,S.i+1); draw(); return say(S.items[S.i].src); }
     if(u==="hint"){ S.showHint=true; return draw(); }

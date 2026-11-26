@@ -57,7 +57,7 @@ main{max-width:720px;margin:0 auto;padding:16px 14px 60px}
 .tag.q{background:var(--warnbg);color:var(--warn)}
 .best{font-size:12px;color:var(--sub)}
 .q{margin:0 0 8px;font-weight:600;font-size:calc(15px * var(--fz,1))}
-.kmark{display:block;margin-top:6px;padding-top:6px;border-top:1px dashed var(--line);font-style:italic;color:var(--teal)}
+.kfold{display:block;margin-top:6px}.kfold>summary{cursor:pointer;display:inline-block;font-size:.9em;color:var(--teal);padding:2px 8px;border:1px dashed var(--line);border-radius:999px;list-style:none;user-select:none}.kfold>summary::-webkit-details-marker{display:none}.kfold>summary::after{content:" ▸"}.kfold[open]>summary::after{content:" ▾"}.kmark{display:block;margin-top:6px;padding-top:6px;border-top:1px dashed var(--line);font-style:italic;color:var(--teal)}
 .fzbox{display:inline-flex;gap:4px;align-items:center}.fzrow{margin:6px 0 2px}.fzl{font-size:12px;color:var(--sub);margin-right:4px}.b.fzt{min-width:34px;padding-left:8px;padding-right:8px}.fzb{min-width:40px;font-weight:700}
 .hint{font-size:calc(13px * var(--fz,1));color:var(--sub);margin:0 0 10px;padding:8px 10px;background:var(--paper);border-radius:8px}
 .script{margin:0 0 12px;font:calc(17px * var(--fz,1))/1.8 "Iowan Old Style","Charter",Georgia,"Times New Roman",serif}
@@ -7584,7 +7584,8 @@ function extraHTML(c) {                              // 발음 주의 · 추가 
 /* 흐름의 ※ 메모(다른 문제와 겸용 안내)는 줄을 바꿔 기울임으로 따로 보여 줌 */
 function koHTML(ko) {
   const parts = String(ko || "").split("※");
-  return esc(parts[0].trim()) + parts.slice(1).map(x => `<span class="kmark">※ ${esc(x.trim())}</span>`).join("");
+  const notes = parts.slice(1).map(x => x.trim()).filter(Boolean);
+  return esc(parts[0].trim()) + (notes.length ? `<details class="kfold"><summary>※ 메모 ${notes.length}개</summary>${notes.map(x => `<span class="kmark">※ ${esc(x)}</span>`).join("")}</details>` : "");
 }
 function cardHTML(c) {
   const ps = paras(c.text);
